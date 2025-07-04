@@ -4,7 +4,7 @@ export const services = [{
         description: 'Full-stack web applications with modern technologies',
         icon: 'Globe',
         features: ['React/Next.js', 'Node.js/Express', 'Database Design', 'API Development', 'SEO Optimization'],
-        startingPrice: '₹ 2,500'
+        startingPrice: '₹ 25,000'
     },
     {
         id: '2',
@@ -12,7 +12,7 @@ export const services = [{
         description: 'Native and cross-platform mobile applications',
         icon: 'Smartphone',
         features: ['React Native', 'Flutter', 'iOS/Android', 'App Store Deployment', 'Push Notifications'],
-        startingPrice: '₹ 5,000'
+        startingPrice: '₹ 35,000'
     },
     {
         id: '3',
@@ -20,7 +20,7 @@ export const services = [{
         description: 'Intelligent solutions powered by AI and ML',
         icon: 'Brain',
         features: ['Custom AI Models', 'Data Analysis', 'Automation', 'Computer Vision', 'Natural Language Processing'],
-        startingPrice: '₹ 3,000'
+        startingPrice: '₹ 50,000'
     },
     {
         id: '4',
@@ -28,7 +28,7 @@ export const services = [{
         description: 'Scalable cloud infrastructure and deployment',
         icon: 'Cloud',
         features: ['AWS/Azure/GCP', 'DevOps', 'CI/CD Pipelines', 'Microservices', 'Monitoring & Analytics'],
-        startingPrice: '₹ 1,500'
+        startingPrice: '₹ 20,000'
     },
     {
         id: '5',
@@ -36,7 +36,7 @@ export const services = [{
         description: 'Beautiful and intuitive user experiences',
         icon: 'Palette',
         features: ['User Research', 'Wireframing', 'Prototyping', 'Visual Design', 'Usability Testing'],
-        startingPrice: '₹ 2,000'
+        startingPrice: '₹ 15,000'
     },
     {
         id: '6',
@@ -44,9 +44,11 @@ export const services = [{
         description: 'Strategic technology consulting and planning',
         icon: 'Users',
         features: ['Tech Strategy', 'Architecture Review', 'Code Audits', 'Performance Optimization', 'Training'],
-        startingPrice: '₹ 150/hour'
+        startingPrice: '₹ 1,500/hour'
     }
 ];
+
+
 
 export const portfolioItems = [{
         id: '1',
