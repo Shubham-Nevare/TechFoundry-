@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
                 <Code className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold">FreelanceTeam</span>
+              <span className="text-xl font-bold">TechFoundry</span>
             </Link>
             <p className="text-gray-400 mb-4 max-w-md">
               Your trusted partner for end-to-end tech solutions. We deliver exceptional 
@@ -20,11 +20,11 @@ const Footer = () => {
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span className="text-sm">hello@freelanceteam.com</span>
+                <span className="text-sm">snevare9@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+91 7758875837</span>
               </div>
             </div>
           </div>
@@ -45,8 +45,10 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/portfolio" className="text-gray-400 hover:text-white transition-colors">Portfolio</Link></li>
+              <li><Link href="/case-studies" className="text-gray-400 hover:text-white transition-colors">Case Studies</Link></li>
               <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/admin" className="text-gray-400 hover:text-white transition-colors">Admin</Link></li>
             </ul>
           </div>

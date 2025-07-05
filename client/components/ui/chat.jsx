@@ -90,7 +90,7 @@ const Chat = ({ userName = 'Guest' }) => {
     const lowerMessage = message.toLowerCase();
     
     if (lowerMessage.includes('price') || lowerMessage.includes('cost')) {
-      return 'Our pricing varies based on project complexity. Web development starts at $2,500, mobile apps at $5,000. Would you like to discuss your specific needs?';
+      return 'Our pricing varies based on project complexity. Web development starts at ₹ 2,500, mobile apps at ₹ 5,000. Would you like to discuss your specific needs?';
     }
     
     if (lowerMessage.includes('timeline') || lowerMessage.includes('time')) {
@@ -133,8 +133,8 @@ const Chat = ({ userName = 'Guest' }) => {
           <X className="h-4 w-4" />
         </Button>
       </CardHeader>
-      <CardContent className="flex-1 flex flex-col p-0">
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <CardContent className="flex-1 flex flex-col p-0" style={{ minHeight: 0 }}>
+        <div className="flex-1 overflow-y-auto p-4 space-y-4" style={{ minHeight: 0 }}>
           {messages.map((message) => (
             <div
               key={message.id}

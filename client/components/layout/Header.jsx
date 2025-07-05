@@ -18,6 +18,7 @@ const Header = () => {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
@@ -52,7 +53,7 @@ const Header = () => {
               <Code className="h-6 w-6 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900 dark:text-white">
-              FreelanceTeam
+            TechFoundry
             </span>
           </Link>
 
