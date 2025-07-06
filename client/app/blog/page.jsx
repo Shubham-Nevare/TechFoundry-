@@ -5,20 +5,15 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, User, ArrowRight, BookOpen, PenTool, Lightbulb, TrendingUp } from 'lucide-react';
 import { blogPosts } from '@/lib/data';
+import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 
 export default function Blog() {
-  const heroRef = useRef(null);
   const postsRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(heroRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
     gsap.fromTo(postsRef.current.querySelectorAll('.blog-card'),
       { y: 100, opacity: 0 },
       { 
@@ -37,19 +32,26 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={heroRef} className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Our
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Blog</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Insights, tutorials, and industry trends from our team of experts
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Our"
+        subtitle="Blog"
+        description="Insights, tutorials, and industry trends from our team of experts"
+        primaryButton={{ text: 'Subscribe', href: '#newsletter' }}
+        secondaryButton={{ text: 'Latest Posts', href: '#posts' }}
+        badge="Expert Insights & Tutorials"
+        stats={[
+          { value: '50+', label: 'Articles Published', valueColor: 'text-blue-600' },
+          { value: '10K+', label: 'Monthly Readers', valueColor: 'text-purple-600' },
+          { value: '5+', label: 'Expert Authors', valueColor: 'text-green-600' },
+          { value: 'Weekly', label: 'New Content', valueColor: 'text-orange-600' }
+        ]}
+        floatingIcons={[
+          { position: 'top-1/4 left-10', size: 'w-12 h-12', bg: 'bg-blue-500/20', component: BookOpen, iconClass: 'h-6 w-6 text-blue-600' },
+          { position: 'top-1/3 right-16', size: 'w-10 h-10', bg: 'bg-purple-500/20', component: PenTool, iconClass: 'h-5 w-5 text-purple-600' },
+          { position: 'bottom-1/3 left-20', size: 'w-14 h-14', bg: 'bg-green-500/20', component: Lightbulb, iconClass: 'h-7 w-7 text-green-600' },
+          { position: 'bottom-1/4 right-10', size: 'w-11 h-11', bg: 'bg-orange-500/20', component: TrendingUp, iconClass: 'h-5 w-5 text-orange-600' }
+        ]}
+      />
 
       {/* Featured Post */}
       <section className="py-20 bg-white">

@@ -5,18 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Users, Target, Award, Clock, CheckCircle, Star, Linkedin, Github, ExternalLink, Shield, Zap, Heart } from 'lucide-react';
 import { teamMembers, certifications, guarantees } from '@/lib/data';
+import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 
 export default function About() {
-  const heroRef = useRef(null);
   const storyRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(heroRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
     gsap.fromTo(storyRef.current,
       { x: -100, opacity: 0 },
       { 
@@ -92,20 +87,26 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={heroRef} className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              About
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> FreelanceTeam</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're a passionate team of developers, designers, and innovators dedicated to 
-              helping businesses thrive in the digital world with proven expertise and reliability.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="About"
+        subtitle="TechFoundry Team"
+        description="We're a passionate team of developers, designers, and innovators dedicated to helping businesses thrive in the digital world with proven expertise and reliability."
+        primaryButton={{ text: 'Meet Our Team', href: '#team' }}
+        secondaryButton={{ text: 'Our Story', href: '#story' }}
+        badge="8+ Years of Excellence"
+        stats={[
+          { value: '15+', label: 'Team Members', valueColor: 'text-blue-600' },
+          { value: '100+', label: 'Projects Completed', valueColor: 'text-purple-600' },
+          { value: '8+', label: 'Years Experience', valueColor: 'text-green-600' },
+          { value: '<24h', label: 'Response Time', valueColor: 'text-orange-600' }
+        ]}
+        floatingIcons={[
+          { position: 'top-1/4 left-10', size: 'w-12 h-12', bg: 'bg-blue-500/20', component: Users, iconClass: 'h-6 w-6 text-blue-600' },
+          { position: 'top-1/3 right-16', size: 'w-10 h-10', bg: 'bg-purple-500/20', component: Award, iconClass: 'h-5 w-5 text-purple-600' },
+          { position: 'bottom-1/3 left-20', size: 'w-14 h-14', bg: 'bg-green-500/20', component: Target, iconClass: 'h-7 w-7 text-green-600' },
+          { position: 'bottom-1/4 right-10', size: 'w-11 h-11', bg: 'bg-orange-500/20', component: Clock, iconClass: 'h-5 w-5 text-orange-600' }
+        ]}
+      />
 
       {/* Story Section */}
       <section className="py-20 bg-white">

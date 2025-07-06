@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, ArrowRight, Calendar, DollarSign, Users, TrendingUp, Target, CheckCircle } from 'lucide-react';
+import { ExternalLink, ArrowRight, Calendar, DollarSign, Users, TrendingUp, Target, CheckCircle, IndianRupee } from 'lucide-react';
 import { portfolioItems, testimonials } from '@/lib/data';
+import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
-  const heroRef = useRef(null);
   const portfolioRef = useRef(null);
 
   const categories = ['all', 'Web Development', 'Mobile Development', 'AI & Machine Learning', 'Cloud Solutions', 'UI/UX Design'];
@@ -22,11 +22,6 @@ export default function Portfolio() {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   useEffect(() => {
-    gsap.fromTo(heroRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
     gsap.fromTo(portfolioRef.current.querySelectorAll('.portfolio-card'),
       { y: 100, opacity: 0 },
       { 
@@ -45,19 +40,26 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={heroRef} className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Our
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Portfolio</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our latest projects and see how we've helped businesses achieve their goals with measurable results
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Our"
+        subtitle="Portfolio"
+        description="Explore our latest projects and see how we've helped businesses achieve their goals with measurable results"
+        primaryButton={{ text: 'Start Your Project', href: '/contact' }}
+        secondaryButton={{ text: 'View Case Studies', href: '/case-studies' }}
+        badge="100+ Projects Delivered"
+        stats={[
+          { value: '50+', label: 'Happy Clients', valueColor: 'text-blue-600' },
+          { value: '4.9/5', label: 'Client Rating', valueColor: 'text-purple-600' },
+          { value: '100%', label: 'Success Rate', valueColor: 'text-green-600' },
+          { value: '20+', label: 'Industries', valueColor: 'text-orange-600' }
+        ]}
+        floatingIcons={[
+          { position: 'top-1/4 left-10', size: 'w-12 h-12', bg: 'bg-blue-500/20', component: Target, iconClass: 'h-6 w-6 text-blue-600' },
+          { position: 'top-1/3 right-16', size: 'w-10 h-10', bg: 'bg-purple-500/20', component: TrendingUp, iconClass: 'h-5 w-5 text-purple-600' },
+          { position: 'bottom-1/3 left-20', size: 'w-14 h-14', bg: 'bg-green-500/20', component: CheckCircle, iconClass: 'h-7 w-7 text-green-600' },
+          { position: 'bottom-1/4 right-10', size: 'w-11 h-11', bg: 'bg-orange-500/20', component: Users, iconClass: 'h-5 w-5 text-orange-600' }
+        ]}
+      />
 
       {/* Category Filter */}
       <section className="py-8 bg-white border-b">
@@ -125,7 +127,7 @@ export default function Portfolio() {
                         <span className="text-gray-600">{item.duration}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <DollarSign className="h-4 w-4 text-purple-500" />
+                        <IndianRupee className="h-4 w-4 text-purple-500" />
                         <span className="text-gray-600">{item.budget}</span>
                       </div>
                       <div className="flex items-center space-x-2">

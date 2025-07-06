@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
         <Header />
         {/* <ThemeToggle /> */}
-        <main className="min-h-screen pt-16">
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />

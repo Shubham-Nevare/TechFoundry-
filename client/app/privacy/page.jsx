@@ -4,19 +4,14 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Lock, Eye, CheckCircle, Calendar } from 'lucide-react';
+import { Shield, Lock, Eye, CheckCircle, Calendar, UserCheck, FileText, Database } from 'lucide-react';
+import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 
 export default function Privacy() {
-  const heroRef = useRef(null);
   const contentRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(heroRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
     gsap.fromTo(contentRef.current.querySelectorAll('.content-section'),
       { y: 50, opacity: 0 },
       { 
@@ -58,19 +53,46 @@ export default function Privacy() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={heroRef} className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Privacy
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Policy</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We take your privacy seriously. Learn how we protect and handle your information.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Privacy"
+        subtitle="Policy"
+        description="We take your privacy seriously. Learn how we protect and handle your information."
+        primaryButton={{ text: 'Contact Us', href: '/contact' }}
+        secondaryButton={{ text: 'Learn More', href: '#content' }}
+        badge="GDPR Compliant & Secure"
+        previewCards={[
+          {
+            icon: Shield,
+            iconBg: 'bg-gradient-to-r from-blue-600 to-purple-600',
+            title: 'Data Protection',
+            description: 'Enterprise-grade security measures',
+            price: 'Encrypted & Secure',
+            priceColor: 'text-blue-600'
+          },
+          {
+            icon: Lock,
+            iconBg: 'bg-gradient-to-r from-purple-600 to-pink-600',
+            title: 'Secure Storage',
+            description: 'Protected servers & encryption',
+            price: '24/7 Monitoring',
+            priceColor: 'text-purple-600'
+          },
+          {
+            icon: Eye,
+            iconBg: 'bg-gradient-to-r from-green-600 to-blue-600',
+            title: 'Transparency',
+            description: 'Clear data handling practices',
+            price: 'Full Disclosure',
+            priceColor: 'text-green-600'
+          }
+        ]}
+        floatingIcons={[
+          { position: 'top-1/4 left-10', size: 'w-12 h-12', bg: 'bg-blue-500/20', component: Shield, iconClass: 'h-6 w-6 text-blue-600' },
+          { position: 'top-1/3 right-16', size: 'w-10 h-10', bg: 'bg-purple-500/20', component: Lock, iconClass: 'h-5 w-5 text-purple-600' },
+          { position: 'bottom-1/3 left-20', size: 'w-14 h-14', bg: 'bg-green-500/20', component: UserCheck, iconClass: 'h-7 w-7 text-green-600' },
+          { position: 'bottom-1/4 right-10', size: 'w-11 h-11', bg: 'bg-orange-500/20', component: Database, iconClass: 'h-5 w-5 text-orange-600' }
+        ]}
+      />
 
       {/* Privacy Features */}
       <section className="py-12 bg-white border-b">

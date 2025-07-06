@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Shield, CheckCircle, Zap, Users, Award } from 'lucide-react';
 import Chat from '@/components/ui/chat';
+import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 import Link from 'next/link';
 
@@ -25,15 +26,9 @@ export default function Contact() {
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const heroRef = useRef(null);
   const formRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(heroRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
     gsap.fromTo(formRef.current,
       { x: -100, opacity: 0 },
       { 
@@ -114,19 +109,46 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={heroRef} className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Start Your
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Project</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to bring your ideas to life? Let's discuss your project and create something amazing together.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Start Your"
+        subtitle="Project"
+        description="Ready to bring your ideas to life? Let's discuss your project and create something amazing together."
+        primaryButton={{ text: 'Get Started', href: '#contact-form' }}
+        secondaryButton={{ text: 'View Portfolio', href: '/portfolio' }}
+        badge="24-Hour Response Guarantee"
+        previewCards={[
+          {
+            icon: Shield,
+            iconBg: 'bg-gradient-to-r from-blue-600 to-purple-600',
+            title: 'Secure & Confidential',
+            description: 'Your information is protected',
+            price: 'Enterprise-grade security',
+            priceColor: 'text-blue-600'
+          },
+          {
+            icon: Zap,
+            iconBg: 'bg-gradient-to-r from-purple-600 to-pink-600',
+            title: '24-Hour Response',
+            description: 'We guarantee quick replies',
+            price: 'Same day response',
+            priceColor: 'text-purple-600'
+          },
+          {
+            icon: CheckCircle,
+            iconBg: 'bg-gradient-to-r from-green-600 to-blue-600',
+            title: 'No Obligation',
+            description: 'Free consultation included',
+            price: 'No commitment required',
+            priceColor: 'text-green-600'
+          }
+        ]}
+        floatingIcons={[
+          { position: 'top-1/4 left-10', size: 'w-12 h-12', bg: 'bg-blue-500/20', component: MessageCircle, iconClass: 'h-6 w-6 text-blue-600' },
+          { position: 'top-1/3 right-16', size: 'w-10 h-10', bg: 'bg-purple-500/20', component: Mail, iconClass: 'h-5 w-5 text-purple-600' },
+          { position: 'bottom-1/3 left-20', size: 'w-14 h-14', bg: 'bg-green-500/20', component: Phone, iconClass: 'h-7 w-7 text-green-600' },
+          { position: 'bottom-1/4 right-10', size: 'w-11 h-11', bg: 'bg-orange-500/20', component: Send, iconClass: 'h-5 w-5 text-orange-600' }
+        ]}
+      />
 
       {/* Trust Features */}
       <section className="py-12 bg-white border-b">
@@ -444,7 +466,7 @@ export default function Contact() {
             <Button size="lg" variant="secondary" asChild>
               <Link href="#contact-form">Start Your Project</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-purple-600">
+            <Button size="lg" variant="outline" asChild className="border-white text-white bg-transparent hover:bg-white hover:text-purple-600">
               <Link href="/portfolio">View Our Work</Link>
             </Button>
           </div>

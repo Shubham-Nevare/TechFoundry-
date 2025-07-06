@@ -5,20 +5,15 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Globe, Smartphone, Brain, Cloud, Palette, Users, Code, CheckCircle, Clock, DollarSign, Shield, Award, Zap, Database } from 'lucide-react';
+import { ArrowRight, Globe, Smartphone, Brain, Cloud, Palette, Users, Code, CheckCircle, Clock, DollarSign, Shield, Award, Zap, Database, IndianRupee } from 'lucide-react';
 import { services, guarantees, certifications } from '@/lib/data';
+import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 
 export default function Services() {
-  const heroRef = useRef(null);
   const servicesRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(heroRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
     gsap.fromTo(servicesRef.current.querySelectorAll('.service-card'),
       { y: 100, opacity: 0 },
       { 
@@ -91,135 +86,84 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 overflow-hidden relative">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-16 left-8 w-24 h-24 bg-blue-400/15 rounded-full animate-pulse"></div>
-          <div className="absolute top-32 right-12 w-20 h-20 bg-purple-400/15 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-24 left-1/3 w-16 h-16 bg-green-400/20 rounded-full animate-ping"></div>
-          <div className="absolute bottom-32 right-1/4 w-28 h-28 bg-orange-400/15 rounded-full animate-pulse"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={heroRef} className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full text-sm font-medium mb-6 animate-fade-in">
-              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
-              Professional Services with Guaranteed Results
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-slide-up">
-              Our
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Services</span>
-            </h1>
-            
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-delay">
-              Comprehensive tech solutions tailored to your business needs. 
-              From web development to AI integration, we deliver excellence with every project.
-            </p>
-            
-            {/* Interactive Service Preview Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12 animate-fade-in-delay-2">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200/50 group">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Globe className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Web Development</h3>
-                <p className="text-sm text-gray-600">Modern, responsive websites</p>
-                <div className="text-xs text-blue-600 mt-2">Starting from $2,500</div>
-              </div>
-              
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200/50 group">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Smartphone className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Mobile Apps</h3>
-                <p className="text-sm text-gray-600">iOS & Android applications</p>
-                <div className="text-xs text-purple-600 mt-2">Starting from $5,000</div>
-              </div>
-              
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200/50 group">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Brain className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">AI Solutions</h3>
-                <p className="text-sm text-gray-600">Smart automation & ML</p>
-                <div className="text-xs text-green-600 mt-2">Starting from $8,000</div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row justify-center gap-4 animate-slide-up-delay">
-              <Button size="lg" asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <Link href="/contact">Get Free Quote</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="transform hover:scale-105 transition-all duration-300 border-2">
-                <Link href="/case-studies">View Case Studies</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-        
-        {/* Floating Service Icons */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-8 animate-float">
-            <div className="w-14 h-14 bg-blue-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-              <Code className="h-7 w-7 text-blue-600" />
-            </div>
-          </div>
-          <div className="absolute top-1/3 right-12 animate-float-delay">
-            <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-              <Palette className="h-6 w-6 text-purple-600" />
-            </div>
-          </div>
-          <div className="absolute bottom-1/3 left-16 animate-float-delay-2">
-            <div className="w-16 h-16 bg-green-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-              <Users className="h-8 w-8 text-green-600" />
-            </div>
-          </div>
-          <div className="absolute bottom-1/4 right-8 animate-float">
-            <div className="w-13 h-13 bg-orange-500/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-              <Database className="h-6 w-6 text-orange-600" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Our"
+        subtitle="Services"
+        description="Comprehensive tech solutions tailored to your business needs. From web development to AI integration, we deliver excellence with every project."
+        primaryButton={{ text: 'Get Free Quote', href: '/contact' }}
+        secondaryButton={{ text: 'View Case Studies', href: '/case-studies' }}
+        badge="Professional Services with Guaranteed Results"
+        previewCards={[
+          {
+            icon: Globe,
+            iconBg: 'bg-gradient-to-r from-blue-600 to-purple-600',
+            title: 'Web Development',
+            description: 'Modern, responsive websites',
+            price: 'Starting from ₹2,500',
+            priceColor: 'text-blue-600'
+          },
+          {
+            icon: Smartphone,
+            iconBg: 'bg-gradient-to-r from-purple-600 to-pink-600',
+            title: 'Mobile Apps',
+            description: 'iOS & Android applications',
+            price: 'Starting from ₹5,000',
+            priceColor: 'text-purple-600'
+          },
+          {
+            icon: Brain,
+            iconBg: 'bg-gradient-to-r from-green-600 to-blue-600',
+            title: 'AI Solutions',
+            description: 'Smart automation & ML',
+            price: 'Starting from ₹8,000',
+            priceColor: 'text-green-600'
+          }
+        ]}
+        floatingIcons={[
+          { position: 'top-1/4 left-8', size: 'w-14 h-14', bg: 'bg-blue-500/20', component: Code, iconClass: 'h-7 w-7 text-blue-600' },
+          { position: 'top-1/3 right-12', size: 'w-12 h-12', bg: 'bg-purple-500/20', component: Palette, iconClass: 'h-6 w-6 text-purple-600' },
+          { position: 'bottom-1/3 left-16', size: 'w-16 h-16', bg: 'bg-green-500/20', component: Users, iconClass: 'h-8 w-8 text-green-600' },
+          { position: 'bottom-1/4 right-8', size: 'w-13 h-13', bg: 'bg-orange-500/20', component: Database, iconClass: 'h-6 w-6 text-orange-600' }
+        ]}
+      />
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <section className="mobile-py-xl bg-white">
+        <div className="max-w-7xl mx-auto mobile-px">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="mobile-text-3xl font-bold text-gray-900 mb-4">
               Why Choose Us?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
               We deliver exceptional results with proven expertise and reliability
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mobile-gap">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </Card>
+                              <Card key={index} className="text-center p-4 sm:p-6 hover:shadow-lg transition-shadow">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                  </div>
+                  <h3 className="mobile-text-base font-semibold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="mobile-text-sm text-gray-600">{item.description}</p>
+                </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section ref={servicesRef} className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <section ref={servicesRef} className="mobile-py-xl bg-gray-50">
+        <div className="max-w-7xl mx-auto mobile-px">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="mobile-text-3xl font-bold text-gray-900 mb-4">
               Our Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
               End-to-end solutions tailored to your business needs
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mobile-gap">
             {services.map((service) => {
               const IconComponent = {
                 Globe,
@@ -232,55 +176,55 @@ export default function Services() {
               
               return (
                 <Card key={service.id} className="service-card group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-8 w-8 text-white" />
+                  <CardHeader className="p-4 sm:p-6">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                     </div>
-                    <CardTitle className="text-2xl">{service.title}</CardTitle>
-                    <CardDescription className="text-base">{service.description}</CardDescription>
+                    <CardTitle className="mobile-text-xl">{service.title}</CardTitle>
+                    <CardDescription className="mobile-text-base">{service.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-6">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="space-y-4 sm:space-y-6">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
-                        <ul className="space-y-2">
+                        <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 mobile-text-sm">What's Included:</h4>
+                        <ul className="space-y-1 sm:space-y-2">
                           {service.includes.map((item, index) => (
-                            <li key={index} className="flex items-center text-sm text-gray-600">
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                            <li key={index} className="flex items-center mobile-text-sm text-gray-600">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2 flex-shrink-0" />
                               {item}
                             </li>
                           ))}
                         </ul>
                       </div>
                       
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between text-sm">
+                      <div className="space-y-2 sm:space-y-3">
+                        <div className="flex items-center justify-between mobile-text-xs">
                           <span className="text-gray-600">Starting Price:</span>
-                          <span className="font-bold text-blue-600 text-lg">{service.startingPrice}</span>
+                          <span className="font-bold text-blue-600 mobile-text-base">{service.startingPrice}</span>
                         </div>
-                        <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center justify-between mobile-text-xs">
                           <span className="text-gray-600">Delivery Time:</span>
                           <span className="font-medium">{service.deliveryTime}</span>
                         </div>
-                        <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center justify-between mobile-text-xs">
                           <span className="text-gray-600">Guarantee:</span>
                           <span className="text-green-600 font-medium">{service.guarantee}</span>
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t">
-                        <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
-                        <div className="flex flex-wrap gap-2">
+                      <div className="pt-3 sm:pt-4 border-t">
+                        <h4 className="font-semibold text-gray-900 mb-2 mobile-text-sm">Key Features:</h4>
+                        <div className="flex flex-wrap gap-1 sm:gap-2">
                           {service.features.slice(0, 4).map((feature, index) => (
-                            <Badge key={index} variant="outline" className="text-xs">
+                            <Badge key={index} variant="outline" className="mobile-text-xs">
                               {feature}
                             </Badge>
                           ))}
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t">
-                        <Button asChild className="w-full">
+                      <div className="pt-3 sm:pt-4 border-t">
+                        <Button asChild className="w-full mobile-text-sm">
                           <Link href="/contact">
                             Get Started <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>
@@ -398,7 +342,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="p-6 text-center">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="h-6 w-6 text-green-600" />
+                <IndianRupee className="h-6 w-6 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Fixed Pricing</h3>
               <p className="text-sm text-gray-600">Clear, upfront pricing with no hidden fees</p>
@@ -434,7 +378,7 @@ export default function Services() {
             <Button size="lg" variant="secondary" asChild>
               <Link href="/contact">Start a Project</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-purple-600">
+            <Button size="lg" variant="outline" asChild className="border-white text-white bg-transparent hover:bg-white hover:text-purple-600">
               <Link href="/portfolio">View Our Work</Link>
             </Button>
           </div>

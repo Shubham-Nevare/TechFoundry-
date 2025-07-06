@@ -76,7 +76,7 @@ export const portfolioItems = [{
         link: 'https://example.com',
         client: 'Fashion Retailer',
         duration: '8 weeks',
-        budget: '₹ 75,000',
+        budget: '₹ XXXXXX',
         results: ['300% increase in sales', '50% reduction in cart abandonment', '99.9% uptime achieved'],
         challenge: 'Complex inventory management and real-time stock updates',
         solution: 'Built custom inventory system with real-time sync and automated alerts'
@@ -90,7 +90,7 @@ export const portfolioItems = [{
         technologies: ['React Native', 'Firebase', 'Redux'],
         client: 'HealthTech Startup',
         duration: '10 weeks',
-        budget: '₹ 95,000',
+        budget: '₹ XXXXXX',
         results: ['50,000+ downloads', '4.8/5 app store rating', '80% user retention'],
         challenge: 'Complex workout tracking with offline support',
         solution: 'Implemented robust offline-first architecture with sync capabilities'
@@ -104,7 +104,7 @@ export const portfolioItems = [{
         technologies: ['Python', 'TensorFlow', 'NLP', 'FastAPI'],
         client: 'E-commerce Giant',
         duration: '12 weeks',
-        budget: '₹ 1,50,000',
+        budget: '₹ XXXXXX',
         results: ['80% reduction in support tickets', '24/7 customer support', '95% accuracy rate'],
         challenge: 'Understanding complex customer queries in multiple languages',
         solution: 'Built multilingual NLP model with context awareness'
@@ -118,7 +118,7 @@ export const portfolioItems = [{
         technologies: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
         client: 'Financial Services Company',
         duration: '16 weeks',
-        budget: '₹ 2,00,000',
+        budget: '₹ XXXXXX',
         results: ['60% cost reduction', '99.99% uptime', '50% faster deployment'],
         challenge: 'Migrating legacy systems without downtime',
         solution: 'Implemented blue-green deployment strategy with automated rollback'
@@ -132,7 +132,7 @@ export const portfolioItems = [{
         technologies: ['Figma', 'Adobe XD', 'Prototyping', 'User Testing'],
         client: 'Digital Bank',
         duration: '6 weeks',
-        budget: '₹ 45,000',
+        budget: '₹ XXXXXX',
         results: ['40% increase in user engagement', '90% user satisfaction', 'Reduced support calls by 60%'],
         challenge: 'Creating intuitive interface for complex financial operations',
         solution: 'Conducted extensive user research and implemented progressive disclosure'
@@ -146,7 +146,7 @@ export const portfolioItems = [{
         technologies: ['Vue.js', 'Python', 'PostgreSQL', 'WebSocket'],
         client: 'Hospital Network',
         duration: '14 weeks',
-        budget: '₹ 1,80,000',
+        budget: '₹ XXXXXX',
         results: ['Real-time monitoring of 1000+ patients', '30% faster response time', 'HIPAA compliant'],
         challenge: 'Real-time data processing with strict security requirements',
         solution: 'Built secure WebSocket infrastructure with end-to-end encryption'
