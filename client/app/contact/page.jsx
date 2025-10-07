@@ -172,7 +172,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card ref={formRef} className="shadow-xl">
+            <Card ref={formRef} className="shadow-xl max-h-fit">
               <CardHeader>
                 <CardTitle className="text-2xl">Project Details</CardTitle>
                 <CardDescription>

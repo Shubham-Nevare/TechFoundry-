@@ -255,13 +255,16 @@ export const certifications = [{
         name: 'Google Cloud Professional',
         issuer: 'Google Cloud',
         year: '2023',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Cloud_logo.svg'
+        // logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Cloud_logo.svg'
+        logo:'https://algotrading101.com/learn/wp-content/uploads/2022/09/Google-Cloud-Logo-Lockup-MAIN-png-1.webp'
+        
     },
     {
         name: 'Microsoft Azure Developer',
         issuer: 'Microsoft',
         year: '2023',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_logo.svg'
+        // logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_logo.svg'
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
     },
     {
         name: 'TensorFlow Developer Certificate',

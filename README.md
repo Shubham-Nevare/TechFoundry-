@@ -34,14 +34,8 @@ TechFoundry is a full-stack template/project designed for freelancers, agencies,
 
 ## 🚀 Getting Started
 
-Clone the repo:
-
 ```bash
-git clone https://github.com/Shubham-Nevare/TechFoundry-.git
-cd TechFoundry-
-npm install
-npm run dev
-Open http://localhost:3000 and start building!
+
 
 💰 Services & Pricing (as of July 4, 2025)
 Service	Starting Price

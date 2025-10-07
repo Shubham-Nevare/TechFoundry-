@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { generateToken } from '@/lib/auth';
 
-const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD = 'admin123'; // In production, use environment variables
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME; 
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD; 
 
 export async function POST(request) {
     try {
