@@ -144,6 +144,13 @@ export default function Home() {
         ]}
       />
 
+      {/* Hidden branding image (contains 'developous' in filename) for SEO */}
+      <img
+        src="/logo-developous.svg"
+        alt="Developous brand mark"
+        className="hidden"
+      />
+
       {/* Trust Badges Section */}
       <section ref={trustRef} className="mobile-py bg-white border-b">
         <div className="max-w-7xl mx-auto mobile-px">
@@ -152,7 +159,8 @@ export default function Home() {
               Trusted & Certified
             </h2>
             <p className="mobile-text-sm text-gray-600">
-              We maintain the highest standards of quality and security
+              We maintain the highest standards of quality and security <br />{" "}
+              Developous adheres to strict processes to keep your systems safe.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 mobile-gap">
@@ -184,7 +192,9 @@ export default function Home() {
               Our Services
             </h2>
             <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
-              End-to-end tech solutions tailored to your business needs
+              End-to-end tech solutions tailored to your business needs.
+              Developous designs scalable systems with performance and
+              reliability in mind.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mobile-gap">
@@ -274,7 +284,8 @@ export default function Home() {
               Our Guarantees
             </h2>
             <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
-              We stand behind our work with these promises
+              We stand behind our work with these promises — Developous
+              guarantees timely delivery and ongoing support.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mobile-gap">
@@ -324,7 +335,9 @@ export default function Home() {
               Meet Our Team
             </h2>
             <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
-              Experienced professionals dedicated to your success
+              Experienced professionals dedicated to your success. The
+              Developous team blends product thinking with engineering
+              excellence.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mobile-gap">
@@ -435,29 +448,31 @@ export default function Home() {
               Our team holds industry-recognized certifications
             </p>
           </div>
-         <div className="hidden md:grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-  {certifications.map((cert, index) => (
-    <Card
-      key={index}
-      className="text-center p-3 sm:p-6 hover:shadow-lg transition-shadow bg-white/5 backdrop-blur-md rounded-2xl"
-    >
-      <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-        <img
-          src={cert.logo}
-          alt={cert.issuer}
-          className="w-8 h-8 sm:w-12 sm:h-12 object-contain"
-        />
-      </div>
-      <h3 className="font-semibold text-black mb-1 text-sm sm:text-base">
-        {cert.name}
-      </h3>
-      <p className="text-gray-400 mb-2 text-xs sm:text-sm">{cert.issuer}</p>
-      <Badge variant="secondary" className="text-xs sm:text-sm">
-        {cert.year}
-      </Badge>
-    </Card>
-  ))}
-</div>
+          <div className="hidden md:grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {certifications.map((cert, index) => (
+              <Card
+                key={index}
+                className="text-center p-3 sm:p-6 hover:shadow-lg transition-shadow bg-white/5 backdrop-blur-md rounded-2xl"
+              >
+                <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <img
+                    src={cert.logo}
+                    alt={cert.issuer}
+                    className="w-8 h-8 sm:w-12 sm:h-12 object-contain"
+                  />
+                </div>
+                <h3 className="font-semibold text-black mb-1 text-sm sm:text-base">
+                  {cert.name}
+                </h3>
+                <p className="text-gray-400 mb-2 text-xs sm:text-sm">
+                  {cert.issuer}
+                </p>
+                <Badge variant="secondary" className="text-xs sm:text-sm">
+                  {cert.year}
+                </Badge>
+              </Card>
+            ))}
+          </div>
 
           <div className="md:hidden grid grid-cols-1 gap-3 px-2">
             {certifications.map((cert, index) => (
@@ -490,7 +505,7 @@ export default function Home() {
       </section>
 
       {/* Enhanced Testimonials */}
-      <section className="mobile-py-xl bg-white">
+      {/* <section className="mobile-py-xl bg-white">
         <div className="max-w-7xl mx-auto mobile-px">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mobile-text-3xl font-bold text-gray-900 mb-4">
@@ -562,7 +577,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="mobile-py-xl bg-gradient-to-r from-blue-600 to-purple-600">
@@ -571,8 +586,8 @@ export default function Home() {
             Ready to Start Your Project?
           </h2>
           <p className="mobile-text-lg text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Let's discuss your ideas and bring them to life. Our team is ready
-            to help you succeed.
+            Let's discuss your ideas and bring them to life with Developous. Our
+            team is ready to help you succeed.
           </p>
           <div className="flex flex-col sm:flex-row justify-center mobile-gap-sm">
             <Button

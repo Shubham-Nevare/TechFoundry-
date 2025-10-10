@@ -10,6 +10,13 @@ import { services, guarantees, certifications } from '@/lib/data';
 import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 
+export const metadata = {
+  title: "Services | Developous Web, Mobile, and AI Solutions",
+  description: "Explore our professional services at Developous – web development, mobile app creation, AI solutions, and cloud consulting.",
+  keywords: "Developous services, web development, mobile app development, AI solutions, cloud consulting, software design",
+};
+
+
 export default function Services() {
   const servicesRef = useRef(null);
 

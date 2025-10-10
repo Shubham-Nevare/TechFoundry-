@@ -10,24 +10,48 @@ import ThemeToggle from "@/components/layout/ThemeToggle";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://www.developous.com"), 
+
   title: "Developous - Web, Mobile & AI Solutions",
   description:
     "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
   keywords:
-    "web development, mobile apps, AI solutions, cloud services, UI/UX design, software development",
+    "web development, mobile apps, AI solutions, cloud services, UI/UX design, software development, Developous, digital web agency, digital agency company, tech solutions provider, custom software development, IT consulting services, technology partner, full-stack development, mobile app development company, AI and machine learning solutions, cloud computing services, DevOps and cloud infrastructure, web application development, e-commerce solutions, responsive web design, user experience design, digital transformation services, creative agencies near me, top digital agencies, best web development companies, leading mobile app developers, innovative AI solution providers, trusted cloud service providers, design and marketing agency, branding services, online marketing solutions, SEO services, social media marketing, content creation services, digital strategy consulting, growth hacking services, conversion rate optimization, email marketing services, PPC advertising services, web analytics and reporting, developer, develop website, develop app, develop software",
   authors: [{ name: "Developous" }],
   robots: "index, follow",
+
   openGraph: {
     title: "Developous - Web, Mobile & AI Solutions",
-    description: "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
+    description:
+      "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
     type: "website",
     locale: "en_US",
+    url: "https://www.developous.com", 
+    images: [
+      {
+        url: "https://www.developous.com/logo-developous.svg", // ✅ Full URL
+        width: 1200,
+        height: 630,
+        alt: "Developous - Web, Mobile & AI Solutions",
+      },
+    ],
   },
+
+  // ✅ (Optional but good for SEO)
+  twitter: {
+    card: "summary_large_image",
+    title: "Developous - Web, Mobile & AI Solutions",
+    description:
+      "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
+    images: ["https://www.developous.com/logo-developous.svg"],
+    creator: "@Developous", // Replace if you have a Twitter handle
+  },
+
   icons: {
     icon: "/logo-developous.svg",
-    // apple: '/apple-touch-icon.png',
   },
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">

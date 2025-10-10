@@ -8,6 +8,12 @@ import { teamMembers, certifications, guarantees } from '@/lib/data';
 import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
 
+export const metadata = {
+  title: "About Developous | Our Mission, Vision & Team",
+  description: "Learn more about Developous – a web, mobile, AI, and cloud solutions company helping businesses innovate and grow.",
+  keywords: "About Developous, web development company, AI company, mobile app developers, cloud services, software solutions",
+};
+
 export default function About() {
   const storyRef = useRef(null);
 
@@ -240,7 +246,7 @@ export default function About() {
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
                     <img 
                       src={member.avatar} 
-                      alt={member.name}
+                      alt={`${member.name} - Developous`}
                       className="w-full h-full object-cover"
                     />
                   </div>
