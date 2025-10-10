@@ -11,10 +11,10 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
                 <Code className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold">TechFoundry</span>
+              <span className="text-xl font-bold">Developous</span>
             </Link>
             <p className="text-gray-400 mb-4 max-w-md">
-              Your trusted partner for end-to-end tech solutions. We deliver exceptional 
+              Your trusted partner for end-to-end tech solutions. We deliver exceptional
               web, mobile, AI, and cloud solutions for businesses of all sizes.
             </p>
             <div className="flex space-x-4">
@@ -24,7 +24,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span className="text-sm">+91 7758875837</span>
+                <span className="text-sm">+91 8010791864</span>
               </div>
             </div>
           </div>
@@ -55,8 +55,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2025 TechFoundry. All rights reserved.
+            <p className="text-gray-400">
+            © 2025 Developous. All rights reserved.
           </p>
         </div>
       </div>

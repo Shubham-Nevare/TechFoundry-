@@ -84,9 +84,9 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
       <Hero
-        title="Your Trusted"
-        subtitle="Tech Partner"
-        description="We deliver exceptional web, mobile, AI, and cloud solutions for businesses of all sizes. From concept to deployment, we handle everything with 100% satisfaction guarantee."
+        title="We Develop. You Succeed."
+        subtitle="That's Developous."
+        description="Exceptional web, mobile, AI, and cloud solutions that transform your vision into reality. From concept to deployment, we handle everything with a 100% satisfaction guarantee."
         primaryButton={{ text: "Start Your Project", href: "/contact" }}
         secondaryButton={{ text: "View Our Work", href: "/portfolio" }}
         badge="Trusted by 100+ Businesses Worldwide"

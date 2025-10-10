@@ -89,8 +89,8 @@ export default function About() {
       {/* Hero Section */}
       <Hero
         title="About"
-        subtitle="TechFoundry Team"
-        description="We're a passionate team of developers, designers, and innovators dedicated to helping businesses thrive in the digital world with proven expertise and reliability."
+  subtitle="Developous Team"
+  description="We're a passionate team of developers, designers, and innovators dedicated to helping businesses thrive in the digital world with proven expertise and reliability."
         primaryButton={{ text: 'Meet Our Team', href: '#team' }}
         secondaryButton={{ text: 'Our Story', href: '#story' }}
         badge="8+ Years of Excellence"
@@ -117,7 +117,7 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2025, TechFoundry started as a vision to bridge the gap between 
+                Founded in 2025, Developous started as a vision to bridge the gap between 
                 innovative technology and business needs. We saw too many companies struggling 
                 with unreliable freelancers and impersonal agencies.
               </p>

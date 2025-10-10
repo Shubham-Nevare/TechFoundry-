@@ -1,12 +1,12 @@
-# TechFoundry 🚀
+# Developous 🚀
 
 A modern, professional services hub for delivering cutting-edge solutions in **Web Development**, **Mobile Apps**, **AI & Machine Learning**, **Cloud Solutions**, **UI/UX Design**, and **Consulting**.
 
 ---
 
-## ✨ What is TechFoundry?
+## ✨ What is Developous?
 
-TechFoundry is a full-stack template/project designed for freelancers, agencies, or startups who want to showcase and manage their tech services professionally. Built with **Next.js 14**, **Tailwind CSS**, and modern React features, it’s fast, responsive, and easy to extend.
+Developous is a full-stack template/project designed for freelancers, agencies, or startups who want to showcase and manage their tech services professionally. Built with **Next.js 14**, **Tailwind CSS**, and modern React features, it’s fast, responsive, and easy to extend.
 
 ---
 
