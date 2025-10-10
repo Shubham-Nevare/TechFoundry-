@@ -31,6 +31,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+              <meta name="google-site-verification" content="ssfJxf_KzpLqn74esKr2ntje3Qdiod5ru_olfp_NqhI" />
+      </head>
       <body
         className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
       >
