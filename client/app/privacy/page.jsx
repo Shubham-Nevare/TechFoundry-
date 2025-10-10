@@ -6,15 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Shield, Lock, Eye, CheckCircle, Calendar, UserCheck, FileText, Database } from 'lucide-react';
 import Hero from '@/components/ui/hero';
+
 import { gsap } from 'gsap';
-
-export const metadata = {
-  title: "Privacy Policy - Developous",
-  description: "Read the privacy policy of Developous to learn how we handle user data and protect privacy.",
-  keywords: "Developous, privacy policy, data protection, user privacy, website policy",
-};
-
-
 export default function Privacy() {
   const contentRef = useRef(null);
 

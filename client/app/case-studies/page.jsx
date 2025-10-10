@@ -8,17 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, ArrowRight, Calendar, DollarSign, Users, TrendingUp, Target, Clock, CheckCircle, Star, Award, Zap, IndianRupee } from 'lucide-react';
 import { portfolioItems } from '@/lib/data';
 import Hero from '@/components/ui/hero';
+
 import { gsap } from 'gsap';
-
-export const metadata = {
-  title: "Case Studies - Developous Success Stories",
-  description:
-    "Discover real-world case studies showcasing how Developous helps clients with web, mobile, and AI-powered solutions.",
-  keywords:
-    "Developous case studies, client success stories, web development results, AI project success, portfolio examples",
-};
-
-
 export default function CaseStudies() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedCase, setSelectedCase] = useState(null);

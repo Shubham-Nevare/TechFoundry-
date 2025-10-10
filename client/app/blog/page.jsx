@@ -8,15 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Calendar, Clock, User, ArrowRight, BookOpen, PenTool, Lightbulb, TrendingUp } from 'lucide-react';
 import { blogPosts } from '@/lib/data';
 import Hero from '@/components/ui/hero';
+
 import { gsap } from 'gsap';
-
-export const metadata = {
-  title: "Developous Blog | Tech, AI & Web Development Insights",
-  description: "Stay updated with Developous blogs covering AI trends, web technologies, mobile development, and cloud innovations.",
-  keywords: "Developous blog, AI trends, web development tutorials, mobile app design, cloud computing insights",
-};
-
-
 export default function Blog() {
   const postsRef = useRef(null);
 

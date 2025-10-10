@@ -12,15 +12,8 @@ import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Shield, CheckCircle, Z
 import Chat from '@/components/ui/chat';
 import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
+
 import Link from 'next/link';
-
-export const metadata = {
-  title: "Contact Developous | Get in Touch with Our Team",
-  description: "Reach out to Developous for web, mobile, AI, and cloud projects. We’re here to bring your ideas to life.",
-  keywords: "Contact Developous, hire developers, get a quote, contact web agency, AI development inquiry",
-};
-
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',

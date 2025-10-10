@@ -8,15 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, ArrowRight, Calendar, DollarSign, Users, TrendingUp, Target, CheckCircle, IndianRupee } from 'lucide-react';
 import { portfolioItems, testimonials } from '@/lib/data';
 import Hero from '@/components/ui/hero';
+
 import { gsap } from 'gsap';
-
-export const metadata = {
-  title: "Portfolio | Developous Projects & Case Studies",
-  description: "Check out Developous portfolio showcasing innovative projects in web, mobile, and AI for global clients.",
-  keywords: "Developous portfolio, web projects, app development, AI case studies, design projects",
-};
-
-
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);

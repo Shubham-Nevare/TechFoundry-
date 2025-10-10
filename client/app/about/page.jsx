@@ -6,14 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Users, Target, Award, Clock, CheckCircle, Star, Linkedin, Github, ExternalLink, Shield, Zap, Heart } from 'lucide-react';
 import { teamMembers, certifications, guarantees } from '@/lib/data';
 import Hero from '@/components/ui/hero';
+
 import { gsap } from 'gsap';
-
-export const metadata = {
-  title: "About Developous | Our Mission, Vision & Team",
-  description: "Learn more about Developous – a web, mobile, AI, and cloud solutions company helping businesses innovate and grow.",
-  keywords: "About Developous, web development company, AI company, mobile app developers, cloud services, software solutions",
-};
-
 export default function About() {
   const storyRef = useRef(null);
 
