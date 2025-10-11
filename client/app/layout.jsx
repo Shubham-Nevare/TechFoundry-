@@ -10,7 +10,7 @@ import ThemeToggle from "@/components/layout/ThemeToggle";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  metadataBase: new URL("https://www.developous.com"), 
+  metadataBase: new URL("https://www.developous.com"),
 
   title: "Developous - Web, Mobile & AI Solutions",
   description:
@@ -26,7 +26,7 @@ export const metadata = {
       "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
     type: "website",
     locale: "en_US",
-    url: "https://www.developous.com", 
+    url: "https://www.developous.com",
     images: [
       {
         url: "https://www.developous.com/logo-developous.svg", // ✅ Full URL
@@ -56,18 +56,32 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-              <meta name="google-site-verification" content="ssfJxf_KzpLqn74esKr2ntje3Qdiod5ru_olfp_NqhI" />
+        <meta
+          name="google-site-verification"
+          content="ssfJxf_KzpLqn74esKr2ntje3Qdiod5ru_olfp_NqhI"
+        />
+        <meta itemprop="name" content="Developous" />
+        <meta itemprop="url" content="https://www.developous.com" />
       </head>
       <body
         className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
       >
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Developous",
-          "url": "https://www.developous.com",
-          "logo": "https://www.developous.com/logo-developous.svg"
-        }) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Developous",
+              url: "https://www.developous.com",
+              logo: "https://www.developous.com/logo-developous.svg",
+              sameAs: [
+                "https://www.linkedin.com/company/developous/",
+                "https://x.com/developous",
+              ],
+            }),
+          }}
+        />
         <Header />
         {/* <ThemeToggle /> */}
         <h1 className="hidden">Developous</h1>
