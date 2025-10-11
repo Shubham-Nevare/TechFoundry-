@@ -49,7 +49,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/project-requests', {
+      const response = await fetch('https://formspree.io/f/xblzzqyl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -249,6 +249,7 @@ export default function Contact() {
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
                         <SelectContent>
+                          <SelectItem value="not-sure">Not sure</SelectItem>
                           <SelectItem value="under-5k">Under ₹5,000</SelectItem>
                           <SelectItem value="5k-10k">₹5,000 - ₹10,000</SelectItem>
                           <SelectItem value="10k-25k">₹10,000 - ₹25,000</SelectItem>
