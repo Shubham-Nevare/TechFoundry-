@@ -16,7 +16,7 @@ export const metadata = {
   description:
     "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
   keywords:
-    "web development, mobile apps, AI solutions, cloud services, UI/UX design, software development, Developous, digital web agency, digital agency company, tech solutions provider, custom software development, IT consulting services, technology partner, full-stack development, mobile app development company, AI and machine learning solutions, cloud computing services, DevOps and cloud infrastructure, web application development, e-commerce solutions, responsive web design, user experience design, digital transformation services, creative agencies near me, top digital agencies, best web development companies, leading mobile app developers, innovative AI solution providers, trusted cloud service providers, design and marketing agency, branding services, online marketing solutions, SEO services, social media marketing, content creation services, digital strategy consulting, growth hacking services, conversion rate optimization, email marketing services, PPC advertising services, web analytics and reporting, developer, develop website, develop app, develop software",
+    "web development, mobile apps, AI solutions, cloud services, UI/UX design, software development, Developous, Developlus,developus, digital web agency, digital agency company, tech solutions provider, custom software development, IT consulting services, technology partner, full-stack development, mobile app development company, AI and machine learning solutions, cloud computing services, DevOps and cloud infrastructure, web application development, e-commerce solutions, responsive web design, user experience design, digital transformation services, creative agencies near me, top digital agencies, best web development companies, leading mobile app developers, innovative AI solution providers, trusted cloud service providers, design and marketing agency, branding services, online marketing solutions, SEO services, social media marketing, content creation services, digital strategy consulting, growth hacking services, conversion rate optimization, email marketing services, PPC advertising services, web analytics and reporting, developer, develop website, develop app, develop software",
   authors: [{ name: "Developous" }],
   robots: "index, follow",
 
@@ -66,10 +66,11 @@ export default function RootLayout({ children }) {
           "@type": "Organization",
           "name": "Developous",
           "url": "https://www.developous.com",
-          "logo": "https://www.developous.com/logo.png"
+          "logo": "https://www.developous.com/logo-developous.svg"
         }) }} />
         <Header />
         {/* <ThemeToggle /> */}
+        <h1 className="hidden">Developous</h1>
         <main className="min-h-screen">{children}</main>
         <Footer />
         <Toaster />
