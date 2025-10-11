@@ -41,6 +41,9 @@ import Chat from "@/components/ui/chat";
 import Hero from "@/components/ui/hero";
 import { gsap } from "gsap";
 import Heromain from "@/components/ui/heromain";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Home() {
   const servicesRef = useRef(null);
@@ -48,6 +51,8 @@ export default function Home() {
   const trustRef = useRef(null);
 
   useEffect(() => {
+      if (!servicesRef.current || !trustRef.current) return;
+
     // Animate service cards on scroll
     gsap.fromTo(
       servicesRef.current.querySelectorAll(".service-card"),

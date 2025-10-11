@@ -10,6 +10,8 @@ import { portfolioItems } from '@/lib/data';
 import Hero from '@/components/ui/hero';
 
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default function CaseStudies() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedCase, setSelectedCase] = useState(null);

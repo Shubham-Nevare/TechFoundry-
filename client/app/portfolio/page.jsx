@@ -10,6 +10,8 @@ import { portfolioItems, testimonials } from '@/lib/data';
 import Hero from '@/components/ui/hero';
 
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);

@@ -8,6 +8,8 @@ import { Shield, Lock, Eye, CheckCircle, Calendar, UserCheck, FileText, Database
 import Hero from '@/components/ui/hero';
 
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default function Privacy() {
   const contentRef = useRef(null);
 

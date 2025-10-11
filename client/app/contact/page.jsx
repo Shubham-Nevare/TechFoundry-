@@ -12,6 +12,8 @@ import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Shield, CheckCircle, Z
 import Chat from '@/components/ui/chat';
 import Hero from '@/components/ui/hero';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 import Link from 'next/link';
 export default function Contact() {

@@ -60,8 +60,8 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="ssfJxf_KzpLqn74esKr2ntje3Qdiod5ru_olfp_NqhI"
         />
-        <meta itemprop="name" content="Developous" />
-        <meta itemprop="url" content="https://www.developous.com" />
+        <meta itemProp="name" content="Developous" />
+        <meta itemProp="url" content="https://www.developous.com" />
       </head>
       <body
         className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
