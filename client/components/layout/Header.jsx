@@ -24,17 +24,30 @@ const Header = () => {
   ];
 
   useEffect(() => {
-    gsap.fromTo(
-      headerRef.current,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
+    const headerEl = headerRef.current;
+    const logoEl = logoRef.current;
 
-    gsap.fromTo(
-      logoRef.current,
-      { scale: 0, rotation: -180 },
-      { scale: 1, rotation: 0, duration: 1, delay: 0.3, ease: "back.out(1.7)" }
-    );
+    if (headerEl) {
+      gsap.fromTo(
+        headerEl,
+        { y: -100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+      );
+    }
+
+    if (logoEl) {
+      gsap.fromTo(
+        logoEl,
+        { scale: 0, rotation: -180 },
+        {
+          scale: 1,
+          rotation: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: "back.out(1.7)",
+        }
+      );
+    }
   }, []);
 
   return (
@@ -47,10 +60,14 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div ref={logoRef} className="p-0 rounded-lg">
-              <img src="/logo-developous.png" alt="Developous logo" className="h-10 w-10" />
+              <img
+                src="/logo-developous.png"
+                alt="Developous logo"
+                className="h-10 w-10"
+              />
             </div>
             <span className="text-xl font-bold text-gray-900 dark:text-white">
-            Developous
+              Developous
             </span>
           </Link>
 
@@ -67,7 +84,7 @@ const Header = () => {
                 </Link>
               ))}
             </nav>
-            
+
             <div className="flex items-center gap-4 ml-4">
               {/* <ThemeToggle /> */}
               <Button
@@ -84,7 +101,11 @@ const Header = () => {
             {/* <ThemeToggle className="mr-2" /> */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Open navigation menu"
+                >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>

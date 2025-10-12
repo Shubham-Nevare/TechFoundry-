@@ -52,37 +52,43 @@ export default function Home() {
   useEffect(() => {
     if (!servicesRef.current || !trustRef.current) return;
 
-    // Animate service cards on scroll
-    gsap.fromTo(
-      servicesRef.current.querySelectorAll(".service-card"),
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 80%",
-        },
-      }
-    );
+    // Animate service cards on scroll (only if nodes exist)
+    const serviceNodes = servicesRef.current.querySelectorAll(".service-card");
+    if (serviceNodes && serviceNodes.length > 0) {
+      gsap.fromTo(
+        serviceNodes,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: servicesRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+    }
 
-    // Animate trust badges
-    gsap.fromTo(
-      trustRef.current.querySelectorAll(".trust-badge"),
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: trustRef.current,
-          start: "top 80%",
-        },
-      }
-    );
+    // Animate trust badges (only if nodes exist)
+    const trustNodes = trustRef.current.querySelectorAll(".trust-badge");
+    if (trustNodes && trustNodes.length > 0) {
+      gsap.fromTo(
+        trustNodes,
+        { scale: 0, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: trustRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+    }
   }, []);
 
   return (

@@ -33,20 +33,23 @@ export default function About() {
   const storyRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      storyRef.current,
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: storyRef.current,
-          start: "top 80%",
-        },
-      }
-    );
+    const el = storyRef.current;
+    if (el) {
+      gsap.fromTo(
+        el,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+          },
+        }
+      );
+    }
   }, []);
 
   const stats = [
@@ -139,7 +142,7 @@ export default function About() {
         description="We're a passionate team of developers, designers, and innovators dedicated to helping businesses thrive in the digital world with proven expertise and reliability."
         primaryButton={{ text: "Meet Our Team", href: "#team" }}
         secondaryButton={{ text: "Our Story", href: "#story" }}
-        badge="8+ Years of Excellence"
+        badge="2+ Years of Excellence"
         stats={[
           { value: "15+", label: "Team Members", valueColor: "text-blue-600" },
           {

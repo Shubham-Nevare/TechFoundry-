@@ -57,20 +57,23 @@ export default function Contact() {
   const formRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      formRef.current,
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: formRef.current,
-          start: "top 80%",
-        },
-      }
-    );
+    const el = formRef.current;
+    if (el) {
+      gsap.fromTo(
+        el,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+          },
+        }
+      );
+    }
   }, []);
 
   const handleSubmit = async (e) => {

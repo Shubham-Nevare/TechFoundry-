@@ -16,19 +16,22 @@ export default function Blog() {
   const postsRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(postsRef.current.querySelectorAll('.blog-card'),
-      { y: 100, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: postsRef.current,
-          start: "top 80%",
+    const nodes = postsRef.current?.querySelectorAll('.blog-card');
+    if (nodes && nodes.length > 0) {
+      gsap.fromTo(nodes,
+        { y: 100, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: postsRef.current,
+            start: "top 80%",
+          }
         }
-      }
-    );
+      );
+    }
   }, []);
 
   return (

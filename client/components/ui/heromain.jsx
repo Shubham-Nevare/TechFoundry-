@@ -25,52 +25,70 @@ const Heromain = ({
     // GSAP animations
     const tl = gsap.timeline();
 
-    tl.fromTo(
-      heroRef.current.querySelector("h1"),
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    )
-      .fromTo(
-        heroRef.current.querySelector("p"),
+    const h1 = heroRef.current?.querySelector("h1");
+    const p = heroRef.current?.querySelector("p");
+    const buttons = heroRef.current?.querySelector(".hero-buttons");
+
+    if (h1) {
+      tl.fromTo(
+        h1,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+      );
+    }
+
+    if (p) {
+      tl.fromTo(
+        p,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
         "-=0.5"
-      )
-      .fromTo(
-        heroRef.current.querySelector(".hero-buttons"),
+      );
+    }
+
+    if (buttons) {
+      tl.fromTo(
+        buttons,
         { y: 30, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
         "-=0.3"
       );
-
-    // Animate preview cards if they exist
-    if (previewCards) {
-      gsap.fromTo(
-        heroRef.current.querySelectorAll(".preview-card"),
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          delay: 0.5,
-        }
-      );
     }
 
-    // Animate stats if they exist
+    // Animate preview cards if they exist in the DOM
+    if (previewCards) {
+      const previewNodes = heroRef.current?.querySelectorAll(".preview-card");
+      if (previewNodes && previewNodes.length > 0) {
+        gsap.fromTo(
+          previewNodes,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.2,
+            delay: 0.5,
+          }
+        );
+      }
+    }
+
+    // Animate stats if they exist in the DOM
     if (stats) {
-      gsap.fromTo(
-        heroRef.current.querySelectorAll(".stat-card"),
-        { scale: 0, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          delay: 0.8,
-        }
-      );
+      const statNodes = heroRef.current?.querySelectorAll(".stat-card");
+      if (statNodes && statNodes.length > 0) {
+        gsap.fromTo(
+          statNodes,
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            delay: 0.8,
+          }
+        );
+      }
     }
   }, [previewCards, stats]);
 

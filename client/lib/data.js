@@ -512,7 +512,7 @@ export const blogPosts = [
     date: '2025-09-25',
     category: 'Web Development',
     image:
-      'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
+      '/blog0.webp',
     readTime: '6 min read',
     views: 1870,
     tags: ['Web Development', 'Next.js', 'AI Integration'],
@@ -528,7 +528,7 @@ export const blogPosts = [
     date: '2025-08-12',
     category: 'Mobile Development',
     image:
-      'https://images.pexels.com/photos/4069294/pexels-photo-4069294.jpeg?auto=compress&cs=tinysrgb&w=800',
+      '/blog1.jpeg',
     readTime: '8 min read',
     views: 1560,
     tags: ['Mobile Apps', 'React Native', 'Performance'],
@@ -544,7 +544,7 @@ export const blogPosts = [
     date: '2025-07-20',
     category: 'AI & Machine Learning',
     image:
-      'https://images.pexels.com/photos/1707828/pexels-photo-1707828.jpeg?auto=compress&cs=tinysrgb&w=800',
+      '/blog2.webp',
     readTime: '7 min read',
     views: 2140,
     tags: ['AI', 'Automation', 'Business Growth'],
@@ -560,7 +560,7 @@ export const blogPosts = [
     date: '2025-06-18',
     category: 'UI/UX Design',
     image:
-      'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800',
+      '/blog3.jpeg',
     readTime: '5 min read',
     views: 980,
     tags: ['UI/UX', 'Design Thinking', 'User Experience'],
@@ -576,7 +576,7 @@ export const blogPosts = [
     date: '2025-05-28',
     category: 'Cloud & DevOps',
     image:
-      'https://images.pexels.com/photos/3153201/pexels-photo-3153201.jpeg?auto=compress&cs=tinysrgb&w=800',
+      '/blog4.jpeg',
     readTime: '6 min read',
     views: 1230,
     tags: ['Cloud', 'DevOps', 'Scalability'],

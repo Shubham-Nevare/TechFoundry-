@@ -40,20 +40,23 @@ export default function Services() {
   const servicesRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      servicesRef.current.querySelectorAll(".service-card"),
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 80%",
-        },
-      }
-    );
+    const nodes = servicesRef.current?.querySelectorAll(".service-card");
+    if (nodes && nodes.length > 0) {
+      gsap.fromTo(
+        nodes,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: servicesRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+    }
   }, []);
 
   const process = [

@@ -24,19 +24,22 @@ export default function CaseStudies() {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   useEffect(() => {
-    gsap.fromTo(casesRef.current.querySelectorAll('.case-card'),
-      { y: 100, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: casesRef.current,
-          start: "top 80%",
+    const nodes = casesRef.current?.querySelectorAll('.case-card');
+    if (nodes && nodes.length > 0) {
+      gsap.fromTo(nodes,
+        { y: 100, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: casesRef.current,
+            start: "top 80%",
+          }
         }
-      }
-    );
+      );
+    }
   }, [selectedCategory]);
 
   const metrics = [

@@ -183,16 +183,33 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4 pt-2">
               {[
-                { icon: Twitter, href: "#", color: "hover:text-blue-400" },
-                { icon: Github, href: "#", color: "hover:text-gray-400" },
-                { icon: Linkedin, href: "#", color: "hover:text-blue-500" },
+                {
+                  icon: Twitter,
+                  href: "#",
+                  color: "hover:text-blue-400",
+                  label: "Twitter",
+                },
+                {
+                  icon: Github,
+                  href: "#",
+                  color: "hover:text-gray-400",
+                  label: "GitHub",
+                },
+                {
+                  icon: Linkedin,
+                  href: "#",
+                  color: "hover:text-blue-500",
+                  label: "LinkedIn",
+                },
               ].map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
+                  aria-label={social.label} // ✅ accessible label
                   className={`p-2 bg-gray-800 rounded-lg transition-all hover:bg-gray-700 ${social.color}`}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-5 w-5" aria-hidden="true" />{" "}
+                  {/* hides icon from screen reader */}
                 </Link>
               ))}
             </div>

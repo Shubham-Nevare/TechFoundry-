@@ -24,19 +24,22 @@ export default function Portfolio() {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   useEffect(() => {
-    gsap.fromTo(portfolioRef.current.querySelectorAll('.portfolio-card'),
-      { y: 100, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: portfolioRef.current,
-          start: "top 80%",
+    const nodes = portfolioRef.current?.querySelectorAll('.portfolio-card');
+    if (nodes && nodes.length > 0) {
+      gsap.fromTo(nodes,
+        { y: 100, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: portfolioRef.current,
+            start: "top 80%",
+          }
         }
-      }
-    );
+      );
+    }
   }, [selectedCategory]);
 
   return (

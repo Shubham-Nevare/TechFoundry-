@@ -14,19 +14,22 @@ export default function Privacy() {
   const contentRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(contentRef.current.querySelectorAll('.content-section'),
-      { y: 50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: contentRef.current,
-          start: "top 80%",
+    const nodes = contentRef.current?.querySelectorAll('.content-section');
+    if (nodes && nodes.length > 0) {
+      gsap.fromTo(nodes,
+        { y: 50, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: contentRef.current,
+            start: "top 80%",
+          }
         }
-      }
-    );
+      );
+    }
   }, []);
 
   const privacyFeatures = [
