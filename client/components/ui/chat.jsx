@@ -165,6 +165,7 @@ const Chat = ({ userName = "Guest" }) => {
     return (
       <Button
         onClick={() => setIsOpen(true)}
+        aria-label="Open chat"
         className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg z-50"
         size="icon"
       >

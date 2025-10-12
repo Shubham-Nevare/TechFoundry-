@@ -432,14 +432,14 @@ export const certifications = [{
         name: 'AWS Certified Solutions Architect',
         issuer: 'Amazon Web Services',
         year: '2023',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg'
+        logo: '/Amazon_Web_Services_Logo.svg'
     },
     {
         name: 'Google Cloud Professional',
         issuer: 'Google Cloud',
         year: '2023',
         // logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Cloud_logo.svg'
-        logo:'https://algotrading101.com/learn/wp-content/uploads/2022/09/Google-Cloud-Logo-Lockup-MAIN-png-1.webp'
+        logo:'/Google_Cloud_Logo.webp'
         
     },
     {
@@ -447,13 +447,13 @@ export const certifications = [{
         issuer: 'Microsoft',
         year: '2023',
         // logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_logo.svg'
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
+        logo: '/Microsoft_logo.svg'
     },
     {
         name: 'TensorFlow Developer Certificate',
         issuer: 'Google',
         year: '2023',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg'
+        logo: '/Tensorflow_logo.svg'
     }
 ];
 
