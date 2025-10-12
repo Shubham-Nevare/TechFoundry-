@@ -11,6 +11,7 @@ import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Shield, CheckCircle, Zap, Users, Award } from 'lucide-react';
 import Chat from '@/components/ui/chat';
 import Hero from '@/components/ui/hero';
+import { faqs } from "@/lib/data";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -408,53 +409,36 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Get answers to common questions about working with us
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">How quickly can you start my project?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">We can typically start within 1-2 weeks of project approval. For urgent projects, we offer expedited timelines.</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">What if I'm not satisfied with the work?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">We offer a 100% satisfaction guarantee. If you're not happy, we'll revise until you are completely satisfied.</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Do you provide ongoing support?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Yes, all projects include 3-12 months of post-launch support and maintenance depending on the service.</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Who owns the source code?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">You own 100% of the source code and intellectual property. We provide full code transfer upon completion.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+
+{/* FAQ Section */}
+<section className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        Get answers to the most common questions about our process and services
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {faqs.map((faq) => (
+        <Card key={faq.id} className="hover:shadow-lg transition-all duration-300">
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold text-gray-900">
+              {faq.question}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600">{faq.answer}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">

@@ -1,31 +1,31 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
-import { MessageCircle, Send, X, User, Bot } from 'lucide-react';
-import { gsap } from 'gsap';
+import { useState, useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { MessageCircle, Send, X, User, Bot } from "lucide-react";
+import { gsap } from "gsap";
 
-const Chat = ({ userName = 'Guest' }) => {
+const Chat = ({ userName = "Guest" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
-      id: '1',
-      content: 'Hello! Welcome to FreelanceTeam. How can I help you today?',
-      sender: 'admin',
-      senderName: 'Alex Johnson',
+      id: "1",
+      content: "Hello! Welcome to Developous. How can I help you today?",
+      sender: "admin",
+      senderName: "Alex Johnson",
       timestamp: new Date(),
-    }
+    },
   ]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
   const chatRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -34,7 +34,8 @@ const Chat = ({ userName = 'Guest' }) => {
 
   useEffect(() => {
     if (isOpen && chatRef.current) {
-      gsap.fromTo(chatRef.current,
+      gsap.fromTo(
+        chatRef.current,
         { scale: 0, opacity: 0 },
         { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" }
       );
@@ -48,13 +49,13 @@ const Chat = ({ userName = 'Guest' }) => {
     const userMessage = {
       id: Date.now().toString(),
       content: newMessage,
-      sender: 'user',
+      sender: "user",
       senderName: userName,
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setNewMessage('');
+    setMessages((prev) => [...prev, userMessage]);
+    setNewMessage("");
     setIsTyping(true);
 
     // Simulate admin response
@@ -62,50 +63,102 @@ const Chat = ({ userName = 'Guest' }) => {
       const adminResponse = {
         id: (Date.now() + 1).toString(),
         content: getAutoResponse(newMessage),
-        sender: 'admin',
-        senderName: 'Alex Johnson',
+        sender: "admin",
+        senderName: "Alex Johnson",
         timestamp: new Date(),
       };
-      setMessages(prev => [...prev, adminResponse]);
+      setMessages((prev) => [...prev, adminResponse]);
       setIsTyping(false);
     }, 1500);
 
     // Send to API
     try {
-      await fetch('/api/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           content: newMessage,
           senderName: userName,
-          senderRole: 'client',
+          senderRole: "client",
         }),
       });
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error("Error sending message:", error);
     }
   };
 
   const getAutoResponse = (message) => {
+    // Guard against empty/non-string input
+    if (!message || typeof message !== "string") {
+      return "Thanks for your message! I'll get back to you shortly with more details. In the meantime, feel free to explore our services or submit a project request.";
+    }
+
     const lowerMessage = message.toLowerCase();
-    
-    if (lowerMessage.includes('price') || lowerMessage.includes('cost')) {
-      return 'Our pricing varies based on project complexity. Web development starts at ₹ 2,500, mobile apps at ₹ 5,000. Would you like to discuss your specific needs?';
+
+    // Greeting handling
+    const greetings = ["hi", "hello", "hii", "hey", "hiya"];
+    if (greetings.some((g) => lowerMessage.includes(g))) {
+      return `Hi ${
+        userName || "there"
+      }! I'm Alex from Developous — how can I help you today?`;
     }
-    
-    if (lowerMessage.includes('timeline') || lowerMessage.includes('time')) {
-      return 'Project timelines typically range from 2-12 weeks depending on scope. We can provide a detailed timeline after understanding your requirements.';
+
+    if (
+      lowerMessage.includes("price") ||
+      lowerMessage.includes("cost") ||
+      lowerMessage.includes("charges")
+    ) {
+      return "Our pricing varies based on project complexity. Web development starts at ₹ 2,500 and mobile apps start at ₹ 5,000. Would you like to discuss your specific needs?";
     }
-    
-    if (lowerMessage.includes('portfolio') || lowerMessage.includes('work')) {
-      return 'You can check out our portfolio at /portfolio to see our recent projects. We\'ve completed 100+ successful projects across various industries.';
+
+    if (
+      lowerMessage.includes("timeline") ||
+      lowerMessage.includes("time") ||
+      lowerMessage.includes("duration")
+    ) {
+      return "Project timelines typically range from 2–12 weeks depending on scope. We can provide a detailed timeline after understanding your requirements.";
     }
-    
-    if (lowerMessage.includes('team') || lowerMessage.includes('who')) {
-      return 'Our team consists of experienced developers, designers, and AI specialists. You can meet the team on our About page. We\'re a remote team serving clients worldwide.';
+
+    if (
+      lowerMessage.includes("portfolio") ||
+      lowerMessage.includes("work") ||
+      lowerMessage.includes("projects")
+    ) {
+      return "You can check out our portfolio at /portfolio to see our recent projects. We've completed 100+ successful projects across industries.";
     }
-    
-    return 'Thanks for your message! I\'ll get back to you shortly with more details. In the meantime, feel free to explore our services or submit a project request.';
+
+    if (
+      lowerMessage.includes("team") ||
+      lowerMessage.includes("who") ||
+      lowerMessage.includes("about")
+    ) {
+      return "Our team consists of experienced developers, designers, and AI specialists. You can meet the team on our About page. We're a remote team serving clients worldwide.";
+    }
+
+    if (
+      lowerMessage.includes("support") ||
+      lowerMessage.includes("maintenance")
+    ) {
+      return "Absolutely — all our projects include 3–12 months of free post-launch support, depending on the chosen plan. We also offer affordable maintenance and upgrade packages afterward.";
+    }
+
+    if (
+      lowerMessage.includes("contact") ||
+      lowerMessage.includes("talk") ||
+      lowerMessage.includes("reach")
+    ) {
+      return "You can contact us via the Contact page (/contact) or share your project details here — we’ll get back to you within a few hours.";
+    }
+
+    if (
+      lowerMessage.includes("service") ||
+      lowerMessage.includes("offer") ||
+      lowerMessage.includes("help")
+    ) {
+      return "We offer a wide range of digital solutions — from web and mobile app development to AI chatbots, branding, and automation. What kind of service are you looking for?";
+    }
+
+    return "Thanks for your message! I'll get back to you shortly with more details. In the meantime, feel free to explore our services or submit a project request.";
   };
 
   if (!isOpen) {
@@ -121,9 +174,14 @@ const Chat = ({ userName = 'Guest' }) => {
   }
 
   return (
-    <Card ref={chatRef} className="fixed bottom-6 right-6 w-80 h-96 shadow-2xl z-50 flex flex-col">
+    <Card
+      ref={chatRef}
+      className="fixed bottom-6 right-6 w-80 h-96 shadow-2xl z-50 flex flex-col"
+    >
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
-        <CardTitle className="text-sm font-medium">Chat with FreelanceTeam</CardTitle>
+        <CardTitle className="text-sm font-medium">
+          Chat with DevelopoUs
+        </CardTitle>
         <Button
           variant="ghost"
           size="icon"
@@ -133,27 +191,37 @@ const Chat = ({ userName = 'Guest' }) => {
           <X className="h-4 w-4" />
         </Button>
       </CardHeader>
-      <CardContent className="flex-1 flex flex-col p-0" style={{ minHeight: 0 }}>
-        <div className="flex-1 overflow-y-auto p-4 space-y-4" style={{ minHeight: 0 }}>
+      <CardContent
+        className="flex-1 flex flex-col p-0"
+        style={{ minHeight: 0 }}
+      >
+        <div
+          className="flex-1 overflow-y-auto p-4 space-y-4"
+          style={{ minHeight: 0 }}
+        >
           {messages.map((message) => (
             <div
               key={message.id}
-              className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+              className={`flex ${
+                message.sender === "user" ? "justify-end" : "justify-start"
+              }`}
             >
               <div
                 className={`max-w-[80%] rounded-lg p-3 ${
-                  message.sender === 'user'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-900'
+                  message.sender === "user"
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-100 text-gray-900"
                 }`}
               >
                 <div className="flex items-center space-x-2 mb-1">
-                  {message.sender === 'admin' ? (
+                  {message.sender === "admin" ? (
                     <Bot className="h-4 w-4" />
                   ) : (
                     <User className="h-4 w-4" />
                   )}
-                  <span className="text-xs font-medium">{message.senderName}</span>
+                  <span className="text-xs font-medium">
+                    {message.senderName}
+                  </span>
                   <Badge variant="secondary" className="text-xs">
                     {message.sender}
                   </Badge>
@@ -174,8 +242,14 @@ const Chat = ({ userName = 'Guest' }) => {
                 </div>
                 <div className="flex space-x-1 mt-2">
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  <div
+                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                    style={{ animationDelay: "0.1s" }}
+                  ></div>
+                  <div
+                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                    style={{ animationDelay: "0.2s" }}
+                  ></div>
                 </div>
               </div>
             </div>

@@ -44,14 +44,13 @@ import Heromain from "@/components/ui/heromain";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-
 export default function Home() {
   const servicesRef = useRef(null);
   const teamRef = useRef(null);
   const trustRef = useRef(null);
 
   useEffect(() => {
-      if (!servicesRef.current || !trustRef.current) return;
+    if (!servicesRef.current || !trustRef.current) return;
 
     // Animate service cards on scroll
     gsap.fromTo(
@@ -221,53 +220,65 @@ export default function Home() {
               return (
                 <Card
                   key={service.id}
-                  className="service-card group hover:shadow-lg transition-shadow duration-300"
+                  className="group hover:shadow-lg transition-shadow duration-300 rounded-xl border border-gray-200 bg-white dark:bg-gray-900"
                 >
-                  <CardHeader className="p-4 sm:p-6 flex flex-row items-start gap-4">
+                  <CardHeader className="p-4 sm:p-6 flex flex-row gap-4">
                     {/* Icon */}
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                      <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                    <div className="flex items-start justify-center mt-2">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <IconComponent className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                      </div>
                     </div>
-
-                    {/* Title + Description */}
-                    <div className="flex flex-col">
-                      <CardTitle className="mobile-text-lg font-semibold">
+                    <div className="justify-start items-start">
+                      {/* Title */}
+                      <CardTitle className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white  mb-2">
                         {service.title}
                       </CardTitle>
-                      <CardDescription className="mobile-text-sm text-gray-600">
+
+                      {/* Description */}
+                      <CardDescription className="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left">
                         {service.description}
                       </CardDescription>
                     </div>
                   </CardHeader>
 
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                  <CardContent className="p-4 sm:p-6 pt-0">
+                    {/* Features */}
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 justify-center">
                       {service.features.slice(0, 3).map((feature, index) => (
                         <Badge
                           key={index}
                           variant="secondary"
-                          className="mobile-text-xs"
+                          className="text-xs sm:text-sm bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
                         >
                           {feature}
                         </Badge>
                       ))}
                     </div>
-                    <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
-                      <div className="flex items-center justify-between mobile-text-xs">
-                        <span className="text-gray-600">Starting from</span>
-                        <span className="font-bold text-blue-600">
+
+                    {/* Pricing & Delivery */}
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center justify-between text-xs sm:text-sm">
+                        <span className="text-gray-600 dark:text-gray-400">
+                          Starting from
+                        </span>
+                        <span className="font-bold text-blue-600 dark:text-blue-400">
                           {service.startingPrice}
                         </span>
                       </div>
-                      <div className="flex items-center justify-between mobile-text-xs">
-                        <span className="text-gray-600">Delivery time</span>
-                        <span className="font-medium">
+                      <div className="flex items-center justify-between text-xs sm:text-sm">
+                        <span className="text-gray-600 dark:text-gray-400">
+                          Delivery time
+                        </span>
+                        <span className="font-medium text-gray-800 dark:text-gray-200">
                           {service.deliveryTime}
                         </span>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2 mobile-text-xs text-green-600">
-                      <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4" />
+
+                    {/* Guarantee */}
+                    <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm text-green-600 dark:text-green-400">
+                      <CheckCircle className="h-4 w-4" />
                       <span>{service.guarantee}</span>
                     </div>
                   </CardContent>
@@ -367,7 +378,7 @@ export default function Home() {
                     {member.role}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="p-4 sm:p-6">
+                <CardContent className="">
                   <p className="mobile-text-sm text-gray-600 mb-3 sm:mb-4">
                     {member.bio}
                   </p>
@@ -397,44 +408,51 @@ export default function Home() {
             ))}
             {teamMembers.map((member) => (
               <Card key={member.id} className="block md:hidden">
-                <CardHeader className="p-4 sm:p-6 flex flex-row justify-self-start gap-4">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden">
-                    <img
-                      src={member.avatar}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <CardTitle className="mobile-text-base">
-                      {member.name}
-                    </CardTitle>
-                    <CardDescription className="mobile-text-sm">
-                      {member.role}
-                    </CardDescription>
+                <CardHeader className="p-4">
+                  {/* Avatar, Name and Role - Side by side */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <img
+                        src={member.avatar}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <CardTitle className="text-base font-semibold">
+                        {member.name}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-gray-600">
+                        {member.role}
+                      </CardDescription>
+                    </div>
                   </div>
                 </CardHeader>
-                <CardContent className="p-4">
-                  <p className="mobile-text-sm text-gray-600 mb-3 sm:mb-4">
-                    {member.bio}
-                  </p>
-                  <div className="flex flex-wrap gap-1 justify-start mb-3 sm:mb-4">
+
+                <CardContent className="p-4 pt-0">
+                  {/* Bio */}
+                  <p className="text-sm text-gray-600 mb-4">{member.bio}</p>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-1 mb-4">
                     {member.skills.slice(0, 3).map((skill, index) => (
                       <Badge
                         key={index}
                         variant="outline"
-                        className="mobile-text-xs"
+                        className="text-xs px-2 py-1"
                       >
                         {skill}
                       </Badge>
                     ))}
                   </div>
-                  <div className="mobile-text-xs text-gray-500">
-                    <div className="flex items-center justify-start space-x-1 mb-1">
+
+                  {/* Experience & Certifications */}
+                  <div className="text-xs text-gray-500 space-y-2">
+                    <div className="flex items-center space-x-1">
                       <Clock className="h-3 w-3" />
                       <span>{member.experience} experience</span>
                     </div>
-                    <div className="flex items-center justify-start space-x-1">
+                    <div className="flex items-center space-x-1">
                       <Award className="h-3 w-3" />
                       <span>{member.certifications.length} certifications</span>
                     </div>
