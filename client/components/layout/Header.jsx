@@ -47,7 +47,7 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div ref={logoRef} className="p-0 rounded-lg">
-              <img src="/logo-developous.svg" alt="Developous logo" className="h-10 w-10" />
+              <img src="/logo-developous.png" alt="Developous logo" className="h-10 w-10" />
             </div>
             <span className="text-xl font-bold text-gray-900 dark:text-white">
             Developous

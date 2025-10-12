@@ -20,7 +20,7 @@ const Footer = () => {
           <div className=" space-y-6">
             <Link href="/" className="flex items-center space-x-3 group">
               <img
-                src="/logo-developous.svg"
+                src="/logo-developous.png"
                 alt="Developous logo"
                 className="h-10 w-10"
               />

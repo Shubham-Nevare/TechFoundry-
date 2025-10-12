@@ -154,7 +154,7 @@ export default function Home() {
 
       {/* Hidden branding image (contains 'developous' in filename) for SEO */}
       <img
-        src="/logo-developous.svg"
+        src="/logo-developous.png"
         alt="Developous brand mark"
         className="hidden"
       />

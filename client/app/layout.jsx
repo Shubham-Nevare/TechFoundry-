@@ -5,31 +5,35 @@ import { Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
-import ThemeToggle from "@/components/layout/ThemeToggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  metadataBase: new URL("https://www.developous.com"),
+  metadataBase: new URL("https://developous.com"),
+  alternates: {
+    canonical: "https://developous.com",
+  },
 
   title: "Developous - Web, Mobile & AI Solutions",
   description:
-    "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
-  keywords:
-    "web development, mobile apps, AI solutions, cloud services, UI/UX design, software development, Developous, Developlus,developus, digital web agency, digital agency company, tech solutions provider, custom software development, IT consulting services, technology partner, full-stack development, mobile app development company, AI and machine learning solutions, cloud computing services, DevOps and cloud infrastructure, web application development, e-commerce solutions, responsive web design, user experience design, digital transformation services, creative agencies near me, top digital agencies, best web development companies, leading mobile app developers, innovative AI solution providers, trusted cloud service providers, design and marketing agency, branding services, online marketing solutions, SEO services, social media marketing, content creation services, digital strategy consulting, growth hacking services, conversion rate optimization, email marketing services, PPC advertising services, web analytics and reporting, developer, develop website, develop app, develop software",
-  authors: [{ name: "Developous" }],
+    "Developous offers cutting-edge Web, Mobile, and AI development services. We design scalable digital products that empower businesses worldwide.",
+ keywords:
+  "Developous, Developus, web and mobile app development company, AI software solutions, custom web development, full-stack tech agency, SaaS product development, digital transformation partner, cloud application services, UI UX design studio, business automation software, startup technology solutions, IT consulting and support, AI chatbot development agency, software engineering experts",
+
+  authors: [{ name: "Developous", url: "https://developous.com" }],
   robots: "index, follow",
 
   openGraph: {
     title: "Developous - Web, Mobile & AI Solutions",
     description:
-      "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
+      "End-to-end tech solutions for businesses. Developous builds modern, scalable systems with performance and reliability in mind.",
     type: "website",
     locale: "en_US",
-    url: "https://www.developous.com",
+    url: "https://developous.com",
+    siteName: "Developous",
     images: [
       {
-        url: "https://www.developous.com/logo-developous.svg", // ✅ Full URL
+        url: "https://developous.com/logo-developous.png",
         width: 1200,
         height: 630,
         alt: "Developous - Web, Mobile & AI Solutions",
@@ -37,18 +41,19 @@ export const metadata = {
     ],
   },
 
-  // ✅ (Optional but good for SEO)
   twitter: {
     card: "summary_large_image",
     title: "Developous - Web, Mobile & AI Solutions",
     description:
-      "Developous provides web, mobile, AI, and cloud solutions for businesses worldwide.",
-    images: ["https://www.developous.com/logo-developous.svg"],
-    creator: "@Developous", // Replace if you have a Twitter handle
+      "Developous offers Web, Mobile, and AI development services for businesses worldwide.",
+    images: ["https://developous.com/logo-developous.png"],
+    creator: "@Developous",
   },
 
   icons: {
-    icon: "/logo-developous.svg",
+    icon: "/favicon.ico", // ✅ Use .ico for browser tabs
+    shortcut: "/logo-developous.png", // ✅ PNG for mobile & SEO
+    apple: "/logo-developous.png", // ✅ iOS home screen
   },
 };
 
@@ -56,35 +61,69 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* ✅ Google Site Verification */}
         <meta
           name="google-site-verification"
           content="ssfJxf_KzpLqn74esKr2ntje3Qdiod5ru_olfp_NqhI"
         />
-        <meta itemProp="name" content="Developous" />
-        <meta itemProp="url" content="https://www.developous.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0f172a" /> {/* ✅ For mobile theme */}
+
+        {/* ✅ Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Developous",
+                url: "https://developous.com",
+                logo: "https://developous.com/logo-developous.png",
+                sameAs: [
+                  "https://www.linkedin.com/company/developous/",
+                  "https://x.com/developous",
+                ],
+                description:
+                  "Developous is a full-service digital agency offering Web, Mobile, and AI solutions to empower businesses worldwide.",
+                contactPoint: [
+                  {
+                    "@type": "ContactPoint",
+                    telephone: "+91-8010791864",
+                    contactType: "customer support",
+                    areaServed: "Worldwide",
+                    availableLanguage: ["English"],
+                  },
+                ],
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Developous",
+                url: "https://developous.com",
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target:
+                    "https://developous.com/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ImageObject",
+                url: "https://developous.com/logo-developous.png",
+                width: 1200,
+                height: 630,
+                caption: "Developous - Web, Mobile & AI Solutions",
+              },
+            ]),
+          }}
+        />
       </head>
       <body
         className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Developous",
-              url: "https://www.developous.com",
-              logo: "https://www.developous.com/logo-developous.svg",
-              sameAs: [
-                "https://www.linkedin.com/company/developous/",
-                "https://x.com/developous",
-              ],
-            }),
-          }}
-        />
         <Header />
-        {/* <ThemeToggle /> */}
-        <h1 className="hidden">Developous</h1>
         <main className="min-h-screen">{children}</main>
         <Footer />
         <Toaster />
