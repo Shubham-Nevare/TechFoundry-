@@ -538,7 +538,7 @@ export const teamMembers = [
     id: "3",
     name: "Sarvesh Londhe",
     role: "Mobile Developer",
-    avatar: "/Sarvesh_londhe.jpg",
+    avatar: "/sarvesh_londhe.jpg",
     bio: "Mobile specialist with expertise in React Native and native iOS/Android development.",
     skills: ["React Native", "Swift", "Kotlin", "Flutter", "Firebase"],
     experience: "2+ years",

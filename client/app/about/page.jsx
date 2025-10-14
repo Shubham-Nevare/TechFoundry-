@@ -221,7 +221,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/team1.webp"
                 alt="Team working together"
                 className="rounded-lg shadow-2xl"
               />
