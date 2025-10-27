@@ -81,7 +81,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/xblzzqyl", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,8 @@ export default function Contact() {
           description: "",
         });
       } else {
-        toast.error("Something went wrong. Please try again.");
+        const errorData = await response.json();
+        toast.error(errorData.error || "Something went wrong. Please try again.");
       }
     } catch (error) {
       toast.error("Network error. Please check your connection and try again.");
@@ -436,7 +437,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">snevare9@gmail.com</p>
+                    <p className="text-gray-600">contact@developous.com</p>
                     <p className="text-sm text-gray-500">
                       We'll respond within 24 hours
                     </p>
@@ -449,7 +450,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">+91 8010791864</p>
+                    <p className="text-gray-600">+91 72084 75911</p>
                     <p className="text-sm text-gray-500">
                       Available Mon-Fri, 9 AM - 6 PM IST
                     </p>

@@ -4,7 +4,7 @@ import {
   Mail,
   Phone,
   MapPin,
-  Twitter,
+  Instagram,
   Github,
   Linkedin,
   ArrowRight,
@@ -160,7 +160,7 @@ const Footer = () => {
                 <Mail className="h-4 w-4 text-blue-400" />
               </div>
               <span className="text-gray-300 group-hover:text-white transition-colors">
-                snevare9@gmail.com
+                contact@developous.com
               </span>
             </div>
 
@@ -169,7 +169,7 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-green-400" />
               </div>
               <span className="text-gray-300 group-hover:text-white transition-colors">
-                +91 8010791864
+                +91 72084 75911
               </span>
             </div>
 
@@ -184,27 +184,29 @@ const Footer = () => {
             <div className="flex space-x-4 pt-2">
               {[
                 {
-                  icon: Twitter,
-                  href: "#",
-                  color: "hover:text-blue-400",
-                  label: "Twitter",
-                },
-                {
                   icon: Github,
-                  href: "#",
+                  href: "https://github.com/developous",
                   color: "hover:text-gray-400",
                   label: "GitHub",
                 },
                 {
                   icon: Linkedin,
-                  href: "#",
+                  href: "https://www.linkedin.com/company/developous",
                   color: "hover:text-blue-500",
                   label: "LinkedIn",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/developous_com/",
+                  color: "hover:text-pink-400",
+                  label: "Instagram",
                 },
               ].map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label} // ✅ accessible label
                   className={`p-2 bg-gray-800 rounded-lg transition-all hover:bg-gray-700 ${social.color}`}
                 >

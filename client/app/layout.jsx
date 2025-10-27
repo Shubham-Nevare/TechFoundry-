@@ -81,15 +81,16 @@ export default function RootLayout({ children }) {
                 url: "https://developous.com",
                 logo: "https://developous.com/logo-developous.png",
                 sameAs: [
-                  "https://www.linkedin.com/company/developous/",
-                  "https://x.com/developous",
+                  "https://github.com/developous",
+                  "https://www.linkedin.com/company/developous",
+                  "https://www.instagram.com/developous_com/",
                 ],
                 description:
                   "Developous is a full-service digital agency offering Web, Mobile, and AI solutions to empower businesses worldwide.",
                 contactPoint: [
                   {
                     "@type": "ContactPoint",
-                    telephone: "+91-8010791864",
+                    telephone: "+91-7208475911",
                     contactType: "customer support",
                     areaServed: "Worldwide",
                     availableLanguage: ["English"],
