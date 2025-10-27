@@ -86,41 +86,58 @@ export async function sendAutoReplyEmail(userEmail, userName) {
             to: userEmail,
             subject: 'Thank You for Contacting Developous',
             html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #667eea;">Thank You for Contacting Us!</h2>
-          
-          <p>Dear ${userName},</p>
-          
-          <p>Thank you for reaching out to <strong>Developous</strong>. We have received your project inquiry and will review it shortly.</p>
-          
-          <p style="background-color: #f7fafc; padding: 15px; border-left: 4px solid #667eea; margin: 20px 0;">
-            <strong>What happens next?</strong><br />
-            Our team will review your project details and get back to you within <strong>24 hours</strong> with a detailed response.
-          </p>
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+  <h2 style="color: #667eea;">Thank You for Contacting Us!</h2>
 
-          <p>If you have any urgent questions, feel free to reach out to us directly:</p>
-          <ul>
-            <li><strong>Email:</strong> contact@developous.com</li>
-            <li><strong>Phone:</strong> +91 72084 75911</li>
-            <li><strong>Website:</strong> <a href="https://developous.com" target="_blank" style="color:#667eea; text-decoration:none;">www.developous.com</a></li>
-          </ul>
+  <p>Dear ${userName},</p>
 
-          <p style="margin-top: 30px;">Best regards,<br />
-          <strong>The Developous Team</strong></p>
+  <p>Thank you for reaching out to <strong>Developous</strong>. We have received your project inquiry and will review it shortly.</p>
 
-          <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
+  <p style="background-color: #f7fafc; padding: 15px; border-left: 4px solid #667eea; margin: 20px 0;">
+    <strong>What happens next?</strong><br />
+    Our team will review your project details and get back to you within <strong>24 hours</strong> with a detailed response.
+  </p>
 
-          <div style="font-size: 13px; color: #4a5568;">
-            <strong>Developous Technologies Pvt. Ltd.</strong><br />
-            <span>Empowering Digital Innovation</span><br />
-            <span>Mumbai, Maharashtra, India</span><br />
-            <a href="https://developous.com" target="_blank" style="color:#667eea; text-decoration:none;">https://developous.com</a>
-          </div>
+  <p>If you have any urgent questions, feel free to reach out to us directly:</p>
+  <ul>
+    <li><strong>Email:</strong> contact@developous.com</li>
+    <li><strong>Phone:</strong> +91 72084 75911</li>
+    <li><strong>Website:</strong> 
+      <a href="https://developous.com" target="_blank" style="color:#667eea; text-decoration:none;">
+        www.developous.com
+      </a>
+    </li>
+  </ul>
 
-          <p style="color: #718096; font-size: 12px; margin-top: 30px;">
-            This is an automated response. Please do not reply to this email.
-          </p>
-        </div>
+  <p style="margin-top: 30px;">Best regards,<br />
+  <strong>The Developous Team</strong></p>
+
+  <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
+
+  <div style="font-size: 13px; color: #4a5568;">
+    <strong>Developous Technologies Pvt. Ltd.</strong><br />
+    <span>Empowering Digital Innovation</span><br />
+    <span>Mumbai, Maharashtra, India</span><br />
+    <a href="https://developous.com" target="_blank" style="color:#667eea; text-decoration:none;">
+      https://developous.com
+    </a>
+  </div>
+
+  <div style="margin-top: 15px;">
+    <strong>Connect with us:</strong><br />
+    <a href="https://www.linkedin.com/company/developous" target="_blank" style="color:#0077b5; text-decoration:none; margin-right:10px;">
+      LinkedIn
+    </a> | 
+    <a href="https://www.instagram.com/developous_com/" target="_blank" style="color:#e1306c; text-decoration:none; margin-left:10px;">
+      Instagram
+    </a>
+  </div>
+
+  <p style="color: #718096; font-size: 12px; margin-top: 30px;">
+    This is an automated response. Please do not reply to this email.
+  </p>
+</div>
+
       `,
         };
 
