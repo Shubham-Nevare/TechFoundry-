@@ -378,9 +378,10 @@ export const portfolioItems = [{
 
 export const teamMembers = [{
         id: "1",
-        name: "Shubham Nevare",
+        name: "Yash Patil",
         role: "Full-stack Developer",
-        avatar: "/shubham_nevare.png",
+        // avatar: "/shubham_nevare.png",
+        avatar: "/avtar.jpg",
         bio: "Full-stack developer with 2+ years of experience in modern web technologies.",
         skills: ["React", "Next.js", "Node.js", "AWS", "JavaScript"],
         experience: "2+ years",
