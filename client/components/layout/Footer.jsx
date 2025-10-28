@@ -197,7 +197,7 @@ const Footer = () => {
                 },
                 {
                   icon: Instagram,
-                  href: "https://www.instagram.com/developous_com/",
+                  href: "https://www.instagram.com/developous.tech/",
                   color: "hover:text-pink-400",
                   label: "Instagram",
                 },
