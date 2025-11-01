@@ -58,7 +58,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          {/* <Link href="/" className="flex items-center space-x-2">
             <div ref={logoRef} className="p-0 rounded-lg">
               <img
                 src="/logo-developous.png"
@@ -69,8 +69,17 @@ const Header = () => {
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               Developous
             </span>
+          </Link> */}
+          <Link href="/" className="flex items-center space-x-2">
+            <div ref={logoRef} className="p-0 rounded-lg">
+              <img
+                src="/logo_main.png"
+                alt="Developous logo"
+                className="h-20 w-54"
+              />
+            </div>
+           
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
             <nav className="flex items-center gap-4">

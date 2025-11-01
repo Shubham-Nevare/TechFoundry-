@@ -8,6 +8,8 @@ import {
   Github,
   Linkedin,
   ArrowRight,
+  X,
+  Facebook,
 } from "lucide-react";
 
 const Footer = () => {
@@ -18,7 +20,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className=" space-y-6">
-            <Link href="/" className="flex items-center space-x-3 group">
+            {/* <Link href="/" className="flex items-center space-x-3 group">
               <img
                 src="/logo-developous.png"
                 alt="Developous logo"
@@ -27,7 +29,15 @@ const Footer = () => {
               <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Developous
               </span>
+            </Link> */}
+            <Link href="/" className="flex items-center space-x-3 group">
+            <img
+                src="/logo_main.png"
+                alt="Developous logo"
+                className="h-20 w-54"
+              />
             </Link>
+
 
             <p className="text-gray-300 text-lg max-w-md leading-relaxed">
               Your trusted partner for end-to-end tech solutions. We deliver
@@ -183,12 +193,12 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4 pt-2">
               {[
-                {
-                  icon: Github,
-                  href: "https://github.com/developous",
-                  color: "hover:text-gray-400",
-                  label: "GitHub",
-                },
+                // {
+                //   icon: Github,
+                //   href: "https://github.com/developous",
+                //   color: "hover:text-gray-400",
+                //   label: "GitHub",
+                // },
                 {
                   icon: Linkedin,
                   href: "https://www.linkedin.com/company/developous",
@@ -200,6 +210,18 @@ const Footer = () => {
                   href: "https://www.instagram.com/developous.tech/",
                   color: "hover:text-pink-400",
                   label: "Instagram",
+                },
+                {
+                  icon: X,
+                  href: "https://x.com/developoustech",
+                  color: "hover:text-blue-400",
+                  label: "X",
+                },
+                {
+                  icon: Facebook,
+                  href: "https://www.facebook.com/developous.in/",
+                  color: "hover:text-blue-600",
+                  label: "Facebook",
                 },
               ].map((social, index) => (
                 <Link

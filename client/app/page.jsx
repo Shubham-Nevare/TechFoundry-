@@ -28,6 +28,13 @@ import {
   Zap,
   Lock,
   TrendingUp,
+  Briefcase,
+  ShoppingCart,
+  Wrench,
+  Building2,
+  GraduationCap,
+  Heart,
+  Monitor,
 } from "lucide-react";
 import {
   services,
@@ -203,7 +210,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto mobile-px">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mobile-text-3xl font-bold text-gray-900 mb-4">
-              Our Services
+              Featured Services
             </h2>
             <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
               End-to-end tech solutions tailored to your business needs.
@@ -298,6 +305,240 @@ export default function Home() {
                 View All Services <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Services Section */}
+      <section className="mobile-py-xl bg-gray-50">
+        <div className="max-w-7xl mx-auto mobile-px">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="mobile-text-3xl font-bold text-gray-900 mb-4">
+              Top Services
+            </h2>
+            <p className="mobile-text-lg text-gray-600 max-w-2xl mx-auto">
+              Web Solutions for Every Industry
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mobile-gap">
+            {/* 1️⃣ Business Website */}
+            <Card className="group relative overflow-hidden border border-gray-200 bg-white rounded-2xl h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 rounded-2xl"></div>
+              <CardHeader className="relative z-10 flex flex-col justify-center items-center text-center p-8 min-h-[280px] transition-all duration-300">
+                <div className="flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 group-hover:-translate-y-5 transition-all duration-300 ease-in-out">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 mb-5">
+                    <Monitor className="h-7 w-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 mb-3">
+                    Business Website
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed max-w-xs">
+                    Build a professional online presence that grows your brand
+                    and connects with your audience.
+                  </CardDescription>
+                </div>
+               
+                <div className="absolute inset-x-6  opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                  <CardTitle className="text-2xl font-semibold text-white mb-3">
+                  Business Website
+                  </CardTitle>
+                  <CardDescription className="text-[16px] text-white mb-4 text-center">
+                  We design modern, responsive, and conversion-focused
+                      websites that help your business stand out, attract
+                      customers, and achieve real results online.
+                  </CardDescription>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
+                  >
+                    <Link href="/services">LEARN MORE</Link>
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
+
+            {/* 2️⃣ E-Commerce Website */}
+            <Card className="group relative overflow-hidden border border-gray-200 bg-white rounded-2xl h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 rounded-2xl"></div>
+              <CardHeader className="relative z-10 flex flex-col justify-center items-center text-center p-8 min-h-[280px] transition-all duration-300">
+                <div className="flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 group-hover:-translate-y-5 transition-all duration-300 ease-in-out">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 mb-5">
+                    <ShoppingCart className="h-7 w-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 mb-3">
+                    E-Commerce Website
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed max-w-xs">
+                    Sell smarter with a sleek and secure online store built to
+                    grow your business.
+                  </CardDescription>
+                </div>
+
+                <div className="absolute inset-x-6  opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                  <CardTitle className="text-2xl font-semibold text-white mb-3">
+                    E-Commerce Website
+                  </CardTitle>
+                  <CardDescription className="text-[16px] text-white mb-4 text-center">
+                    We create fast, user-friendly e-commerce websites that make
+                    shopping simple, boost sales, and deliver a seamless
+                    customer experience.
+                  </CardDescription>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
+                  >
+                    <Link href="/services">LEARN MORE</Link>
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
+
+            {/* 3️⃣ Services Website */}
+            <Card className="group relative overflow-hidden border border-gray-200 bg-white rounded-2xl h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 rounded-2xl"></div>
+              <CardHeader className="relative z-10 flex flex-col justify-center items-center text-center p-8 min-h-[280px] transition-all duration-300">
+                <div className="flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 group-hover:-translate-y-5 transition-all duration-300 ease-in-out">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 mb-5">
+                    <Wrench className="h-7 w-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 mb-3">
+                    Services Website
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed max-w-xs">
+                    Showcase your expertise and attract clients with a website
+                    built for service-based businesses.
+                  </CardDescription>
+                </div>
+                <div className="absolute inset-x-6  opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                  <CardTitle className="text-2xl font-semibold text-white mb-3">
+                    Services Website
+                  </CardTitle>
+                  <CardDescription className="text-[16px] text-white mb-4 text-center">
+                    From design to strategy, we craft professional websites that
+                    highlight your services, build trust, and convert visitors
+                    into loyal customers.
+                  </CardDescription>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
+                  >
+                    <Link href="/services">LEARN MORE</Link>
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
+
+            {/* 4️⃣ Real Estate Website */}
+            <Card className="group relative overflow-hidden border border-gray-200 bg-white rounded-2xl h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 rounded-2xl"></div>
+              <CardHeader className="relative z-10 flex flex-col justify-center items-center text-center p-8 min-h-[280px] transition-all duration-300">
+                <div className="flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 group-hover:-translate-y-5 transition-all duration-300 ease-in-out">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 mb-5">
+                    <Building2 className="h-7 w-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 mb-3">
+                    Real Estate Website
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed max-w-xs">
+                    Display your listings beautifully and make property
+                    searching effortless for your clients.
+                  </CardDescription>
+                </div>
+                <div className="absolute inset-x-6  opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                  <CardTitle className="text-2xl font-semibold text-white mb-3">
+                    Real Estate Website
+                  </CardTitle>
+                  <CardDescription className="text-[16px] text-white mb-4 text-center">
+                    We build interactive, easy-to-manage real estate websites
+                    with advanced search, filters, and map integrations to help
+                    you close more deals.
+                  </CardDescription>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
+                  >
+                    <Link href="/services">LEARN MORE</Link>
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
+
+            {/* 5️⃣ Educational Website */}
+            <Card className="group relative overflow-hidden border border-gray-200 bg-white rounded-2xl h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 rounded-2xl"></div>
+              <CardHeader className="relative z-10 flex flex-col justify-center items-center text-center p-8 min-h-[280px] transition-all duration-300">
+                <div className="flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 group-hover:-translate-y-5 transition-all duration-300 ease-in-out">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 mb-5">
+                    <GraduationCap className="h-7 w-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 mb-3">
+                    Educational Website
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed max-w-xs">
+                    Inspire learning with a modern and engaging educational
+                    platform.
+                  </CardDescription>
+                </div>
+                <div className="absolute inset-x-6  opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                  <CardTitle className="text-2xl font-semibold text-white mb-3">
+                    Educational Website
+                  </CardTitle>
+                  <CardDescription className="text-[16px] text-white mb-4 text-center">
+                    We design interactive, student-friendly websites for
+                    schools, institutes, and online educators built for easy
+                    navigation and smart content delivery.
+                  </CardDescription>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
+                  >
+                    <Link href="/services">LEARN MORE</Link>
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
+
+            {/* 6️⃣ Healthcare Website */}
+            <Card className="group relative overflow-hidden border border-gray-200 bg-white rounded-2xl h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 rounded-2xl"></div>
+              <CardHeader className="relative z-10 flex flex-col justify-center items-center text-center p-8 min-h-[280px] transition-all duration-300">
+                <div className="flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 group-hover:-translate-y-5 transition-all duration-300 ease-in-out">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 mb-5">
+                    <Heart className="h-7 w-7 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 mb-3">
+                    Healthcare Website
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed max-w-xs">
+                    Build trust and care through a professional healthcare
+                    website that connects with patients.
+                  </CardDescription>
+                </div>
+                <div className="absolute inset-x-6  opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                  <CardTitle className="text-2xl font-semibold text-white mb-3">
+                    Healthcare Website
+                  </CardTitle>
+                  <CardDescription className="text-[16px] text-white mb-4 text-center">
+                    We create secure, responsive healthcare websites designed to
+                    inform, engage, and simplify appointment booking for
+                    patients.
+                  </CardDescription>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
+                  >
+                    <Link href="/services">LEARN MORE</Link>
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
           </div>
         </div>
       </section>

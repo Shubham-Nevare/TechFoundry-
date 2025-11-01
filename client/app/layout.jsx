@@ -33,7 +33,7 @@ export const metadata = {
     siteName: "Developous",
     images: [
       {
-        url: "https://developous.com/logo-developous.png",
+        url: "https://developous.com/logo_DT.png",
         width: 1200,
         height: 630,
         alt: "Developous - Web, Mobile & AI Solutions",
@@ -46,14 +46,14 @@ export const metadata = {
     title: "Developous - Web, Mobile & AI Solutions",
     description:
       "Developous offers Web, Mobile, and AI development services for businesses worldwide.",
-    images: ["https://developous.com/logo-developous.png"],
+    images: ["https://developous.com/logo_DT.png"],
     creator: "@Developous",
   },
 
   icons: {
-    icon: "/favicon.ico", // ✅ Use .ico for browser tabs
-    shortcut: "/logo-developous.png", // ✅ PNG for mobile & SEO
-    apple: "/logo-developous.png", // ✅ iOS home screen
+    icon: "/logo_DT.ico", // ✅ Use .ico for browser tabs
+    shortcut: "/logo_DT.png", // ✅ PNG for mobile & SEO
+    apple: "/logo_DT.png", // ✅ iOS home screen
   },
 };
 
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
                 sameAs: [
                   "https://github.com/developous",
                   "https://www.linkedin.com/company/developous",
-                  "https://www.instagram.com/developous_com/",
+                  "https://www.instagram.com/developous.tech/",
                 ],
                 description:
                   "Developous is a full-service digital agency offering Web, Mobile, and AI solutions to empower businesses worldwide.",
@@ -112,7 +112,7 @@ export default function RootLayout({ children }) {
               {
                 "@context": "https://schema.org",
                 "@type": "ImageObject",
-                url: "https://developous.com/logo-developous.png",
+                url: "https://developous.com/logo_DT.png",
                 width: 1200,
                 height: 630,
                 caption: "Developous - Web, Mobile & AI Solutions",
