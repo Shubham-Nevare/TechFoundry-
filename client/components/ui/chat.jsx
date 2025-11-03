@@ -179,8 +179,8 @@ const Chat = ({ userName = "Guest" }) => {
       ref={chatRef}
       className="fixed bottom-6 right-6 w-80 h-96 shadow-2xl z-50 flex flex-col"
     >
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
-        <CardTitle className="text-sm font-medium">
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 p-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
+        <CardTitle className="text-md font-medium">
           Chat with DevelopoUs
         </CardTitle>
         <Button

@@ -301,9 +301,15 @@ export default function Home() {
           </div>
           <div className="text-center mt-8 sm:mt-12">
             <Button asChild className="mobile-text-sm">
-              <Link href="/services">
+              {/* <Link href="/services">
                 View All Services <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </Link> */}
+              <Link
+                  href="/services"
+                  className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_200%] text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition-all duration-500 ease-in-out hover:bg-right"
+                >
+                   View All Services <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
             </Button>
           </div>
         </div>
@@ -353,7 +359,7 @@ export default function Home() {
                     variant="outline"
                     className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
                   >
-                    <Link href="/services">LEARN MORE</Link>
+                    <Link href="/services/BusinessWebsite">LEARN MORE</Link>
                   </Button>
                 </div>
               </CardHeader>
@@ -390,7 +396,7 @@ export default function Home() {
                     variant="outline"
                     className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
                   >
-                    <Link href="/services">LEARN MORE</Link>
+                    <Link href="/services/ECommerceWebsite">LEARN MORE</Link>
                   </Button>
                 </div>
               </CardHeader>
@@ -426,7 +432,7 @@ export default function Home() {
                     variant="outline"
                     className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
                   >
-                    <Link href="/services">LEARN MORE</Link>
+                    <Link href="/services/ServicesWebsite">LEARN MORE</Link>
                   </Button>
                 </div>
               </CardHeader>
@@ -462,7 +468,7 @@ export default function Home() {
                     variant="outline"
                     className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
                   >
-                    <Link href="/services">LEARN MORE</Link>
+                    <Link href="/services/RealEstateWebsite">LEARN MORE</Link>
                   </Button>
                 </div>
               </CardHeader>
@@ -498,7 +504,7 @@ export default function Home() {
                     variant="outline"
                     className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
                   >
-                    <Link href="/services">LEARN MORE</Link>
+                    <Link href="/services/EducationalWebsite">LEARN MORE</Link>
                   </Button>
                 </div>
               </CardHeader>
@@ -534,7 +540,7 @@ export default function Home() {
                     variant="outline"
                     className="w-full border-white text-blue-600 bg-white hover:bg-white/90 hover:text-blue-700"
                   >
-                    <Link href="/services">LEARN MORE</Link>
+                    <Link href="/services/HealthcareWebsite">LEARN MORE</Link>
                   </Button>
                 </div>
               </CardHeader>
