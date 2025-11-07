@@ -97,6 +97,7 @@ const Heromain = ({
       ref={heroRef}
       className={`relative pt-20 overflow-hidden ${className}`}
     >
+       {/* <section ref={heroRef}   className={`relative min-h-screen flex items-center justify-center pt-20 overflow-hidden ${className}`}>  */}
       {/* Animated Background Elements - Hidden on mobile for better performance */}
       {backgroundElements && (
         <div className="absolute inset-0 mobile-hidden">

@@ -373,3 +373,12 @@
         gap: 1.5rem;
     }
 }
+
+
+/* paragraph gap for blog content in blog page */
+
+.prose p {
+    margin-top: 1em;
+    /* increases line gap between paragraphs */
+    margin-bottom: 1em;
+}

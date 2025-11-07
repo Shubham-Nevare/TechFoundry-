@@ -35,10 +35,13 @@ export default function Portfolio() {
 
   const categories = [
     "all",
-    "Web Development",
-    "Mobile Development",
+    "Software Development",
+    "Business Website",
+    "Healthcare Website",
     "AI & Machine Learning",
-    "Cloud Solutions",
+    "Real Estate Website",
+    "Educational Website",
+    "E-Commerce Website",
     "UI/UX Design",
   ];
 
@@ -125,7 +128,7 @@ export default function Portfolio() {
 
       {/* Category Filter */}
       <section className="py-8 bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <Button
@@ -144,99 +147,112 @@ export default function Portfolio() {
       {/* Portfolio Grid */}
       <section ref={portfolioRef} className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((item) => (
-              <Card
-                key={item.id}
-                className="portfolio-card group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
-                onClick={() => setSelectedProject(item)}
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <Badge variant="secondary" className="text-xs">
-                      {item.category}
-                    </Badge>
-                    {item.link && (
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        asChild
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Link
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="h-4 w-4" />
-                        </Link>
-                      </Button>
-                    )}
+          {/* If no projects found */}
+          {filteredProjects.length === 0 ? (
+            <div className="text-center py-16">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                No Projects Found
+              </h3>
+              <p className="text-gray-500 max-w-md mx-auto">
+                We're currently working on new projects in this category. Check
+                back soon or explore other categories.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((item) => (
+                <Card
+                  key={item.id}
+                  className="portfolio-card group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
+                  onClick={() => setSelectedProject(item)}
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {item.technologies.map((tech, index) => (
-                        <Badge
-                          key={index}
-                          variant="outline"
-                          className="text-xs"
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <Badge variant="secondary" className="text-xs">
+                        {item.category}
+                      </Badge>
+                      {item.link && (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          asChild
+                          onClick={(e) => e.stopPropagation()}
                         >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="flex items-center space-x-2">
-                        <Users className="h-4 w-4 text-blue-500" />
-                        <span className="text-gray-600">{item.client}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4 text-green-500" />
-                        <span className="text-gray-600">{item.duration}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <IndianRupee className="h-4 w-4 text-purple-500" />
-                        <span className="text-gray-600">{item.budget}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <TrendingUp className="h-4 w-4 text-orange-500" />
-                        <span className="text-gray-600">
-                          {item.results.length} results
-                        </span>
-                      </div>
-                    </div>
-                    <div className="pt-2 border-t">
-                      <div className="text-xs text-gray-500 mb-2">
-                        Key Results:
-                      </div>
-                      <div className="space-y-1">
-                        {item.results.slice(0, 2).map((result, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center text-xs text-gray-600"
+                          <Link
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
-                            <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
-                            {result}
-                          </div>
+                            <ExternalLink className="h-4 w-4" />
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                    <CardDescription>{item.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="flex flex-wrap gap-2">
+                        {item.technologies.map((tech, index) => (
+                          <Badge
+                            key={index}
+                            variant="outline"
+                            className="text-xs"
+                          >
+                            {tech}
+                          </Badge>
                         ))}
                       </div>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <Users className="h-4 w-4 text-blue-500" />
+                          <span className="text-gray-600">{item.client}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Calendar className="h-4 w-4 text-green-500" />
+                          <span className="text-gray-600">{item.duration}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <IndianRupee className="h-4 w-4 text-purple-500" />
+                          <span className="text-gray-600">{item.budget}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <TrendingUp className="h-4 w-4 text-orange-500" />
+                          <span className="text-gray-600">
+                            {item.results.length} results
+                          </span>
+                        </div>
+                      </div>
+                      <div className="pt-2 border-t">
+                        <div className="text-xs text-gray-500 mb-2">
+                          Key Results:
+                        </div>
+                        <div className="space-y-1">
+                          {item.results.slice(0, 2).map((result, index) => (
+                            <div
+                              key={index}
+                              className="flex items-center text-xs text-gray-600"
+                            >
+                              <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
+                              {result}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

@@ -102,8 +102,6 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
       <Heromain
-        // title="Welcome to Developous"
-        // subtitle="Your Tech Partner"
         title="We Develop."
         title2="You Succeed."
         subtitle="That's Developous."

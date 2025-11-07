@@ -1,52 +1,84 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, ArrowRight, Calendar, DollarSign, Users, TrendingUp, Target, Clock, CheckCircle, Star, Award, Zap, IndianRupee } from 'lucide-react';
-import { portfolioItems } from '@/lib/data';
-import Hero from '@/components/ui/hero';
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ExternalLink,
+  ArrowRight,
+  Calendar,
+  DollarSign,
+  Users,
+  TrendingUp,
+  Target,
+  Clock,
+  CheckCircle,
+  Star,
+  Award,
+  Zap,
+  IndianRupee,
+} from "lucide-react";
+import { portfolioItems } from "@/lib/data";
+import Hero from "@/components/ui/hero";
 
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default function CaseStudies() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedCase, setSelectedCase] = useState(null);
   const casesRef = useRef(null);
 
-  const categories = ['all', 'Web Development', 'Mobile Development', 'AI & Machine Learning', 'Cloud Solutions', 'UI/UX Design'];
+  const categories = [
+    "all",
+    "Software Development",
+    "Business Website",
+    "Healthcare Website",
+    "AI & Machine Learning",
+    "Real Estate Website",
+    "Educational Website",
+    "E-Commerce Website",
+    "UI/UX Design",
+  ];
 
-  const filteredCases = selectedCategory === 'all' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === selectedCategory);
+  const filteredCases =
+    selectedCategory === "all"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === selectedCategory);
 
   useEffect(() => {
-    const nodes = casesRef.current?.querySelectorAll('.case-card');
+    const nodes = casesRef.current?.querySelectorAll(".case-card");
     if (nodes && nodes.length > 0) {
-      gsap.fromTo(nodes,
+      gsap.fromTo(
+        nodes,
         { y: 100, opacity: 0 },
-        { 
-          y: 0, 
-          opacity: 1, 
-          duration: 0.8, 
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
           stagger: 0.2,
           scrollTrigger: {
             trigger: casesRef.current,
             start: "top 80%",
-          }
+          },
         }
       );
     }
   }, [selectedCategory]);
 
   const metrics = [
-    { label: 'Projects Completed', value: '100+', icon: Target },
-    { label: 'Client Satisfaction', value: '100%', icon: Star },
-    { label: 'Average Rating', value: '4.9/5', icon: Award },
-    { label: 'Response Time', value: '<24h', icon: Zap }
+    { label: "Projects Completed", value: "100+", icon: Target },
+    { label: "Client Satisfaction", value: "100%", icon: Star },
+    { label: "Average Rating", value: "4.9/5", icon: Award },
+    { label: "Response Time", value: "<24h", icon: Zap },
   ];
 
   return (
@@ -56,20 +88,60 @@ export default function CaseStudies() {
         title="Case"
         subtitle="Studies"
         description="Real projects, real results. Explore how we've helped businesses achieve their goals with measurable outcomes."
-        primaryButton={{ text: 'Start Your Project', href: '/contact' }}
-        secondaryButton={{ text: 'View Portfolio', href: '/portfolio' }}
+        primaryButton={{ text: "Start Your Project", href: "/contact" }}
+        secondaryButton={{ text: "View Portfolio", href: "/portfolio" }}
         badge="Real Results, Real Impact"
         stats={[
-          { value: '100+', label: 'Projects Completed', valueColor: 'text-blue-600' },
-          { value: '100%', label: 'Client Satisfaction', valueColor: 'text-purple-600' },
-          { value: '4.9/5', label: 'Average Rating', valueColor: 'text-green-600' },
-          { value: '<24h', label: 'Response Time', valueColor: 'text-orange-600' }
+          {
+            value: "100+",
+            label: "Projects Completed",
+            valueColor: "text-blue-600",
+          },
+          {
+            value: "100%",
+            label: "Client Satisfaction",
+            valueColor: "text-purple-600",
+          },
+          {
+            value: "4.9/5",
+            label: "Average Rating",
+            valueColor: "text-green-600",
+          },
+          {
+            value: "<24h",
+            label: "Response Time",
+            valueColor: "text-orange-600",
+          },
         ]}
         floatingIcons={[
-          { position: 'top-1/4 left-10', size: 'w-12 h-12', bg: 'bg-blue-500/20', component: Target, iconClass: 'h-6 w-6 text-blue-600' },
-          { position: 'top-1/3 right-16', size: 'w-10 h-10', bg: 'bg-purple-500/20', component: Star, iconClass: 'h-5 w-5 text-purple-600' },
-          { position: 'bottom-1/3 left-20', size: 'w-14 h-14', bg: 'bg-green-500/20', component: Award, iconClass: 'h-7 w-7 text-green-600' },
-          { position: 'bottom-1/4 right-10', size: 'w-11 h-11', bg: 'bg-orange-500/20', component: Zap, iconClass: 'h-5 w-5 text-orange-600' }
+          {
+            position: "top-1/4 left-10",
+            size: "w-12 h-12",
+            bg: "bg-blue-500/20",
+            component: Target,
+            iconClass: "h-6 w-6 text-blue-600",
+          },
+          {
+            position: "top-1/3 right-16",
+            size: "w-10 h-10",
+            bg: "bg-purple-500/20",
+            component: Star,
+            iconClass: "h-5 w-5 text-purple-600",
+          },
+          {
+            position: "bottom-1/3 left-20",
+            size: "w-14 h-14",
+            bg: "bg-green-500/20",
+            component: Award,
+            iconClass: "h-7 w-7 text-green-600",
+          },
+          {
+            position: "bottom-1/4 right-10",
+            size: "w-11 h-11",
+            bg: "bg-orange-500/20",
+            component: Zap,
+            iconClass: "h-5 w-5 text-orange-600",
+          },
         ]}
       />
 
@@ -82,7 +154,9 @@ export default function CaseStudies() {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <metric.icon className="h-6 w-6 text-white" />
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mb-1">{metric.value}</div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">
+                  {metric.value}
+                </div>
                 <div className="text-sm text-gray-600">{metric.label}</div>
               </div>
             ))}
@@ -92,7 +166,7 @@ export default function CaseStudies() {
 
       {/* Category Filter */}
       <section className="py-8 bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <Button
@@ -113,10 +187,14 @@ export default function CaseStudies() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCases.map((item) => (
-              <Card key={item.id} className="case-card group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer" onClick={() => setSelectedCase(item)}>
+              <Card
+                key={item.id}
+                className="case-card group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
+                onClick={() => setSelectedCase(item)}
+              >
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={item.image} 
+                  <img
+                    src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -127,8 +205,17 @@ export default function CaseStudies() {
                       {item.category}
                     </Badge>
                     {item.link && (
-                      <Button variant="ghost" size="icon" asChild onClick={(e) => e.stopPropagation()}>
-                        <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        asChild
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Link
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink className="h-4 w-4" />
                         </Link>
                       </Button>
@@ -150,19 +237,26 @@ export default function CaseStudies() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <IndianRupee className="h-4 w-4 text-purple-500" />
-                         
+
                         <span className="text-gray-600">{item.budget}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <TrendingUp className="h-4 w-4 text-orange-500" />
-                        <span className="text-gray-600">{item.results.length} results</span>
+                        <span className="text-gray-600">
+                          {item.results.length} results
+                        </span>
                       </div>
                     </div>
                     <div className="pt-2 border-t">
-                      <div className="text-xs text-gray-500 mb-2">Key Results:</div>
+                      <div className="text-xs text-gray-500 mb-2">
+                        Key Results:
+                      </div>
                       <div className="space-y-1">
                         {item.results.slice(0, 2).map((result, index) => (
-                          <div key={index} className="flex items-center text-xs text-gray-600">
+                          <div
+                            key={index}
+                            className="flex items-center text-xs text-gray-600"
+                          >
                             <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
                             {result}
                           </div>
@@ -190,10 +284,18 @@ export default function CaseStudies() {
                   <Badge variant="secondary" className="mb-4">
                     {selectedCase.category}
                   </Badge>
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">{selectedCase.title}</h2>
-                  <p className="text-xl text-gray-600">{selectedCase.description}</p>
+                  <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                    {selectedCase.title}
+                  </h2>
+                  <p className="text-xl text-gray-600">
+                    {selectedCase.description}
+                  </p>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => setSelectedCase(null)}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setSelectedCase(null)}
+                >
                   <span className="text-2xl">×</span>
                 </Button>
               </div>
@@ -201,8 +303,8 @@ export default function CaseStudies() {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
                   <div>
-                    <img 
-                      src={selectedCase.image} 
+                    <img
+                      src={selectedCase.image}
                       alt={selectedCase.title}
                       className="w-full rounded-lg shadow-lg"
                     />
@@ -211,31 +313,43 @@ export default function CaseStudies() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card>
                       <CardHeader>
-                        <CardTitle className="text-lg">Project Overview</CardTitle>
+                        <CardTitle className="text-lg">
+                          Project Overview
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-3">
                         <div className="flex items-center justify-between">
                           <span className="text-gray-600">Client:</span>
-                          <span className="font-medium">{selectedCase.client}</span>
+                          <span className="font-medium">
+                            {selectedCase.client}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-gray-600">Duration:</span>
-                          <span className="font-medium">{selectedCase.duration}</span>
+                          <span className="font-medium">
+                            {selectedCase.duration}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-gray-600">Budget:</span>
-                          <span className="font-medium">{selectedCase.budget}</span>
+                          <span className="font-medium">
+                            {selectedCase.budget}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-gray-600">Category:</span>
-                          <span className="font-medium">{selectedCase.category}</span>
+                          <span className="font-medium">
+                            {selectedCase.category}
+                          </span>
                         </div>
                       </CardContent>
                     </Card>
 
                     <Card>
                       <CardHeader>
-                        <CardTitle className="text-lg">Technologies Used</CardTitle>
+                        <CardTitle className="text-lg">
+                          Technologies Used
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="flex flex-wrap gap-2">
@@ -251,20 +365,33 @@ export default function CaseStudies() {
 
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">The Challenge</h3>
-                      <p className="text-gray-600 leading-relaxed">{selectedCase.challenge}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                        The Challenge
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {selectedCase.challenge}
+                      </p>
                     </div>
 
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Solution</h3>
-                      <p className="text-gray-600 leading-relaxed">{selectedCase.solution}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                        Our Solution
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {selectedCase.solution}
+                      </p>
                     </div>
 
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Results Achieved</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                        Results Achieved
+                      </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {selectedCase.results.map((result, index) => (
-                          <div key={index} className="flex items-center p-4 bg-green-50 rounded-lg">
+                          <div
+                            key={index}
+                            className="flex items-center p-4 bg-green-50 rounded-lg"
+                          >
                             <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
                             <span className="text-gray-700">{result}</span>
                           </div>
@@ -286,7 +413,9 @@ export default function CaseStudies() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm">100% client satisfaction</span>
+                        <span className="text-sm">
+                          100% client satisfaction
+                        </span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="h-4 w-4 text-green-500" />
@@ -306,23 +435,36 @@ export default function CaseStudies() {
                     <CardContent>
                       <div className="flex items-center space-x-1 mb-3">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                          />
                         ))}
                       </div>
                       <p className="text-gray-600 text-sm italic mb-3">
-                        "Exceptional work and outstanding results. The team delivered exactly what we needed and more."
+                        "Exceptional work and outstanding results. The team
+                        delivered exactly what we needed and more."
                       </p>
                       <div className="text-sm">
-                        <div className="font-semibold text-gray-900">Client Representative</div>
-                        <div className="text-gray-500">{selectedCase.client}</div>
+                        <div className="font-semibold text-gray-900">
+                          Client Representative
+                        </div>
+                        <div className="text-gray-500">
+                          {selectedCase.client}
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
 
                   {selectedCase.link && (
                     <Button asChild className="w-full">
-                      <Link href={selectedCase.link} target="_blank" rel="noopener noreferrer">
-                        View Live Project <ExternalLink className="ml-2 h-4 w-4" />
+                      <Link
+                        href={selectedCase.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Live Project{" "}
+                        <ExternalLink className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
                   )}
@@ -348,7 +490,12 @@ export default function CaseStudies() {
                 Start Your Project <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white bg-transparent hover:bg-white hover:text-purple-600">
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="border-white text-white bg-transparent hover:bg-white hover:text-purple-600"
+            >
               <Link href="/portfolio">View All Projects</Link>
             </Button>
           </div>
@@ -356,4 +503,4 @@ export default function CaseStudies() {
       </section>
     </div>
   );
-} 
+}

@@ -324,12 +324,12 @@ const Header = () => {
                 side="right"
                 className="w-[70vw] max-w-sm sm:max-w-md"
               >
-                 <VisuallyHidden>
-    <DialogTitle>Mobile Navigation Menu</DialogTitle>
-    <DialogDescription>
-      Navigate through the site using the links below.
-    </DialogDescription>
-  </VisuallyHidden>
+                <VisuallyHidden>
+                  <DialogTitle>Mobile Navigation Menu</DialogTitle>
+                  <DialogDescription>
+                    Navigate through the site using the links below.
+                  </DialogDescription>
+                </VisuallyHidden>
                 <div className="flex flex-col h-full">
                   {/* Header */}
                   <div className="flex items-center justify-between  border-b border-gray-200 dark:border-gray-700">

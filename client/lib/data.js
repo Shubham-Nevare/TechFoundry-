@@ -154,7 +154,7 @@ export const portfolioItems = [{
         id: "1",
         title: "CareerConnect – Job Portal Platform",
         description: "A professional job portal connecting employers and job seekers with a seamless application process.",
-        category: "Web Development",
+        category: "Software Development",
         image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "Node.js", "MongoDB", "Express.js"],
         link: "https://career-connect-jobs.vercel.app/",
@@ -173,7 +173,7 @@ export const portfolioItems = [{
         id: "2",
         title: "Digital Health – AI Healthcare Platform",
         description: "Smart digital healthcare system for online doctor consultations and health monitoring.",
-        category: "Web Development",
+        category: "Healthcare Website",
         image: "https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "Node.js", "MySQL", "AI Chatbot", "Twilio"],
         link: "https://digital-health-dh.vercel.app/",
@@ -192,7 +192,7 @@ export const portfolioItems = [{
         id: "3",
         title: "Developous – Tech Solutions Agency",
         description: "Official website of Developous offering web, mobile, AI, and cloud services worldwide.",
-        category: "Agency Website",
+        category: "Business Website",
         image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "SEO Optimized"],
         link: "https://www.developous.com/",
@@ -211,7 +211,7 @@ export const portfolioItems = [{
         id: "4",
         title: "BlogSave – Modern Blogging Platform",
         description: "A user-friendly blogging platform for writers to post, edit, and share blogs with readers worldwide.",
-        category: "Mobile Development",
+        category: "Software Development",
         image: "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "Firebase", "Tailwind CSS"],
         link: "https://blog-save.vercel.app/",
@@ -230,7 +230,7 @@ export const portfolioItems = [{
         id: "5",
         title: "Gym MiraRoad – Fitness Website",
         description: "A dynamic website for a fitness center showcasing membership plans, trainers, and workout schedules.",
-        category: "Web Development",
+        category: "Business Website",
         image: "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "Tailwind CSS", "EmailJS"],
         link: "https://gymmiraroad.vercel.app/",
@@ -249,7 +249,7 @@ export const portfolioItems = [{
         id: "6",
         title: "CarsDoctor – Car Service Booking App",
         description: "Online platform for car service and maintenance booking with real-time tracking.",
-        category: "Web Development",
+        category: "Business Website",
         image: "https://images.pexels.com/photos/13065690/pexels-photo-13065690.jpeg",
         technologies: ["React", "Node.js", "Express", "MongoDB"],
         link: "https://carsdoctor.vercel.app/",
@@ -268,7 +268,7 @@ export const portfolioItems = [{
         id: "7",
         title: "Akruti Developers – Real Estate Website",
         description: "Real estate showcase website featuring projects, locations, and client inquiries.",
-        category: "Web Development",
+        category: "Real Estate Website",
         image: "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["Next.js", "Tailwind CSS", "Google Maps API"],
         link: "https://akruti-developers.vercel.app/",
@@ -287,7 +287,7 @@ export const portfolioItems = [{
         id: "8",
         title: "Music Distribution Platform (MDP)",
         description: "An online platform for artists to upload, manage, and distribute their music across platforms.",
-        category: "Mobile Development",
+        category: "Software Development",
         image: "https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "Firebase", "Tailwind CSS"],
         link: "https://music-distribution-platform-mdp.vercel.app/login",
@@ -306,7 +306,7 @@ export const portfolioItems = [{
         id: "9",
         title: "Book Finder App",
         description: "Smart book search and recommendation platform using the Google Books API.",
-        category: "Mobile Development",
+        category: "Educational Website",
         image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "API Integration", "Tailwind CSS"],
         link: "https://book-finder-app-khaki.vercel.app/",
@@ -325,7 +325,7 @@ export const portfolioItems = [{
         id: "10",
         title: "Food Delivery Website",
         description: "Modern food delivery website for restaurants with dynamic menu and cart system.",
-        category: "Web Development",
+        category: "E-Commerce Website",
         image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "Redux", "Tailwind CSS"],
         link: "https://food-delivery-website-shubhams.vercel.app/",
@@ -344,7 +344,7 @@ export const portfolioItems = [{
         id: "11",
         title: "Smart AI Bot",
         description: "AI chatbot web app for intelligent conversations and task assistance.",
-        category: "AI Solutions",
+        category: "AI & Machine Learning",
         image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
         technologies: ["React", "OpenAI API", "Tailwind CSS"],
         link: "https://smart-ai-bot.vercel.app/",
@@ -555,7 +555,13 @@ export const blogPosts = [{
         id: "1",
         title: "The Future of Web Development in 2025",
         excerpt: "Discover how AI, Next.js, and automation are redefining the future of web development in 2025.",
-        content: "Web development in 2025 continues to evolve rapidly with trends like AI-powered coding assistants, serverless applications, headless CMS, and edge computing. Companies like Developous are leading the shift toward smarter, faster, and more secure web experiences...",
+        content: `
+Web development in 2025 is all about intelligence, automation, and seamless performance. With the rise of **AI-powered coding tools** and **Next.js 14**, developers are building faster, more secure, and SEO-optimized web apps with minimal effort.
+
+Modern frameworks like **Next.js**, **Remix**, and **Astro** are driving the shift toward edge rendering and serverless deployment. Businesses now prefer web systems that scale instantly and deliver lightning-fast performance on any device.
+
+At **Developous**, we’re embracing these advancements by combining AI-driven workflows, automated testing, and modern UI frameworks to help clients build future-proof digital experiences. The future is clear — web apps are getting smarter, lighter, and more human-centered.
+`,
         author: "Shubham Nevare",
         date: "2025-09-25",
         category: "Web Development",
@@ -568,7 +574,13 @@ export const blogPosts = [{
         id: "2",
         title: "Building Scalable Mobile Apps: A 2025 Guide",
         excerpt: "Learn how to create high-performance, scalable, and user-friendly mobile apps using React Native and modern tools.",
-        content: "In 2025, mobile app development has shifted towards performance, security, and AI personalization. Using frameworks like React Native and Flutter, developers can create faster, scalable apps that work across platforms efficiently...",
+        content: `
+In 2025, mobile app development has evolved into a highly optimized and scalable ecosystem. Frameworks like **React Native** and **Flutter** now allow developers to build cross-platform apps that rival native performance.
+     
+The focus has shifted to **user experience, data security, and AI integration**. Modern apps are expected to adapt to user behavior, deliver personalized content, and function smoothly across low-end devices and slow networks.
+        
+At **Developous**, we prioritize scalability — integrating cloud APIs, optimized databases, and microservices architecture to ensure apps can handle rapid user growth.  Whether it’s a startup MVP or an enterprise app, the key lies in performance, modular design, and reliability.
+        `,
         author: "Developous Team",
         date: "2025-08-12",
         category: "Mobile Development",
@@ -581,7 +593,19 @@ export const blogPosts = [{
         id: "3",
         title: "AI Integration: Transforming Digital Businesses",
         excerpt: "Artificial Intelligence is reshaping how startups and enterprises automate workflows, enhance UX, and make data-driven decisions.",
-        content: "From AI-powered chatbots to predictive analytics, businesses are integrating AI to revolutionize customer experience. At Developous, our AI-driven solutions help clients automate repetitive processes and achieve operational efficiency...",
+        content: `
+Artificial Intelligence has become the backbone of digital transformation. 
+From **predictive analytics** to **AI chatbots**, organizations are leveraging 
+machine learning to automate workflows, make smarter decisions, and personalize user experiences.
+
+Businesses that embrace AI in 2025 are gaining a competitive edge — reducing 
+manual efforts, improving customer satisfaction, and driving profitability.
+
+At **Developous**, we specialize in integrating AI models into real-world business solutions. 
+Our projects include intelligent assistants, automated recommendation engines, 
+and analytics dashboards that help teams work smarter and faster.  
+AI isn’t replacing people — it’s empowering them to innovate at scale.
+`,
         author: "Developous AI Team",
         date: "2025-07-20",
         category: "AI & Machine Learning",
@@ -594,7 +618,13 @@ export const blogPosts = [{
         id: "4",
         title: "Design Thinking in Modern UI/UX",
         excerpt: "Explore how design thinking is changing the way digital agencies create intuitive and impactful user experiences.",
-        content: "Modern design goes beyond aesthetics—it’s about problem-solving. Design thinking helps teams understand user pain points, prototype quickly, and create interfaces that truly connect. At Developous, we combine creativity with analytics to craft meaningful designs...",
+        content: `
+Design Thinking has revolutionized how digital products are created. Instead of focusing purely on visuals, agencies now adopt a **user-first approach** —  understanding pain points, validating ideas, and delivering meaningful experiences.
+        
+Modern UI/UX in 2025 is driven by empathy, accessibility, and micro-interactions.   Tools like **Figma**, **Framer**, and **AI-based prototyping systems** allow designers to move from concept to reality faster than ever before.
+        
+At **Developous**, our design process merges creativity with data analytics. We test, refine, and validate every design to ensure it’s not just beautiful — but functional and human-centered. The goal: design that delights and converts.
+        `,
         author: "Priya Mehta",
         date: "2025-06-18",
         category: "UI/UX Design",
@@ -607,7 +637,13 @@ export const blogPosts = [{
         id: "5",
         title: "Cloud Solutions for Growing Startups",
         excerpt: "Learn how cloud computing enables startups to scale faster and operate more efficiently with reduced costs.",
-        content: "Cloud technology is essential for modern startups. Platforms like AWS, Google Cloud, and Azure empower small businesses to launch scalable apps, ensure uptime, and manage resources effectively. Developous offers customized cloud solutions tailored for startups...",
+        content: `
+For startups in 2025, the cloud isn’t optional — it’s essential. Cloud platforms like **AWS**, **Google Cloud**, and **Azure** enable businesses to deploy applications faster, scale instantly, and minimize infrastructure costs.
+        
+Modern cloud architecture now revolves around **serverless computing**,  **containerization**, and **automated DevOps pipelines**. These tools allow small teams to manage global applications without expensive hardware.
+        
+At **Developous**, we help startups migrate to the cloud, optimize performance, and build scalable digital infrastructure. Whether it’s hosting, deployment, or security — our cloud and DevOps experts ensure your business stays agile, cost-effective, and ready to grow.
+        `,
         author: "Developous Cloud Team",
         date: "2025-05-28",
         category: "Cloud & DevOps",
