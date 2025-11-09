@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
                 "@type": "Organization",
                 name: "Developous",
                 url: "https://developous.com",
-                logo: "https://developous.com/logo-developous.png",
+                logo: "https://developous.com/logo_DT.png",
                 sameAs: [
                   "https://github.com/developous",
                   "https://www.linkedin.com/company/developous",
