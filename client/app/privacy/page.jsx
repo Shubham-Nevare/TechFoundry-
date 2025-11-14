@@ -129,7 +129,7 @@ export default function Privacy() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
-                    At FreelanceTeam ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal data. 
+                    At Developous Team ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal data. 
                     This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
                   </p>
                   <p className="text-gray-600">
@@ -248,7 +248,7 @@ export default function Privacy() {
                     <li><strong>Withdrawal:</strong> Withdraw consent at any time</li>
                   </ul>
                   <p className="text-gray-600 mt-4">
-                    To exercise these rights, please contact us at <span className="text-blue-600">snevare9@gmail.com</span>
+                    To exercise these rights, please contact us at <span className="text-blue-600">contact@developous.com</span>
                   </p>
                 </CardContent>
               </Card>
@@ -311,10 +311,11 @@ export default function Privacy() {
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                      <strong>Email:</strong> <span className="text-blue-600">snevare9@gmail.com</span>
+                      <strong>Email:</strong> 
+                      <span className="text-blue-600">contact@developous.com</span>
                     </p>
                     <p className="text-gray-600">
-                      <strong>Phone:</strong> +91 7758875837
+                      <strong>Phone:</strong> +91 7208475911
                     </p>
                     <p className="text-gray-600">
                       <strong>Response Time:</strong> We aim to respond to privacy-related inquiries within 24 hours.

@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Developous offers cutting-edge Web, Mobile, and AI development services. We design scalable digital products that empower businesses worldwide.",
   keywords:
-    "Developous, Developus, web and mobile app development company, AI software solutions, custom web development, full-stack tech agency, SaaS product development, digital transformation partner, cloud application services, UI UX design studio, business automation software, startup technology solutions, IT consulting and support, AI chatbot development agency, software engineering experts",
+    "Developous, Developus, Develop, website development, web and mobile app development company, AI software solutions, custom web development, full-stack tech agency, SaaS product development, digital transformation partner, cloud application services, UI UX design studio, business automation software, startup technology solutions, IT consulting and support, AI chatbot development agency, software engineering experts, Web Development Company in Mumbai, India",
 
   authors: [{ name: "Developous", url: "https://developous.com" }],
   robots: "index, follow",
